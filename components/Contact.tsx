@@ -4,6 +4,10 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 
 const EMAIL = "hello@shivorra.it.com";
+const PHONE = "+91 70077 46087";
+const WHATSAPP =
+  "https://wa.me/917007746087?text=" +
+  encodeURIComponent("Hi Shivorra — I'd like a free automation audit.");
 
 const GOALS = [
   "IT consulting / advisory",
@@ -112,7 +116,13 @@ export default function Contact() {
                     {EMAIL}
                   </a>
                   <a
-                    href="https://wa.me/910000000000"
+                    href="tel:+917007746087"
+                    className="text-mute-300 transition-colors hover:text-lime-400"
+                  >
+                    {PHONE}
+                  </a>
+                  <a
+                    href={WHATSAPP}
                     className="text-mute-300 transition-colors hover:text-lime-400"
                   >
                     WhatsApp us
@@ -201,7 +211,7 @@ export default function Contact() {
                   Opens your email client with the details filled in. Prefer to
                   talk?{" "}
                   <a
-                    href="https://wa.me/910000000000"
+                    href={WHATSAPP}
                     className="text-mute-300 underline underline-offset-2"
                   >
                     Message us on WhatsApp

@@ -23,7 +23,8 @@ const COLS = [
     h: "Talk to us",
     links: [
       ["hello@shivorra.it.com", "mailto:hello@shivorra.it.com"],
-      ["WhatsApp", "https://wa.me/910000000000"],
+      ["+91 70077 46087", "tel:+917007746087"],
+      ["WhatsApp", "https://wa.me/917007746087"],
       ["Book a free audit", "#contact"],
     ],
   },

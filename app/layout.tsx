@@ -68,6 +68,8 @@ const schema = {
   url: SITE,
   description:
     "IT consultancy and AI automation studio providing technology advisory, cloud migration, custom software and AI agents for growing businesses.",
+  email: "hello@shivorra.it.com",
+  telephone: "+91-70077-46087",
   areaServed: "Worldwide",
   serviceType: [
     "IT consulting",

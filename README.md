@@ -28,7 +28,7 @@ npm run build    # production build
 
 ## Things to change before launch
 
-1. **Phone number** — `wa.me/910000000000` appears in `Contact.tsx` and `Footer.tsx`.
+1. **Phone number** — set to +91 70077 46087 (`Contact.tsx`, `Footer.tsx`, JSON-LD in `layout.tsx`).
 2. **Email** — `hello@shivorra.it.com` in `Contact.tsx`, `FAQ.tsx`, `Footer.tsx`.
 3. **Prices** — all in `Pricing.tsx` (`TIERS` array + the consulting strip).
 4. **Calculator assumptions** — `AUTOMATABLE` and `RECOVERY` constants at the top
@@ -36,8 +36,7 @@ npm run build    # production build
 5. **Blueprints** — `Blueprints.tsx` is explicitly labelled as illustrative, not
    client testimonials. Replace with real named results as they land; don't drop
    the label until they're real.
-6. **OG image** — add `public/og.png` (1200×630) and reference it in
-   `app/layout.tsx` under `openGraph.images`.
+6. **OG image** — generated at build time by `app/opengraph-image.tsx`; edit the copy there.
 
 ## Contact form
 
