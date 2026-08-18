@@ -1,35 +1,27 @@
+import { IconSolo, IconStethoscope, IconStore } from "./Icons";
 import Reveal from "./Reveal";
 
 const WHO = [
   {
+    Icon: IconStethoscope,
     who: "Service businesses",
-    examples: "Clinics, salons, studios, contractors, consultants",
-    pain: "“Half my day is rescheduling and reminding people.”",
-    fix: [
-      "Self-serve booking with deposits collected up front",
-      "No-show reminders over WhatsApp and SMS",
-      "Job-to-invoice pipeline with zero re-entry",
-    ],
+    examples: "Clinics · salons · studios · contractors",
+    pain: "“Half my day is rescheduling people.”",
+    fix: ["Self-serve booking", "Deposits up front", "No-show reminders"],
   },
   {
-    who: "Retail & local shops",
-    examples: "Boutiques, D2C brands, distributors, kitchens",
-    pain: "“I find out I'm out of stock when a customer tells me.”",
-    fix: [
-      "Live stock levels with reorder alerts before you run dry",
-      "Online catalogue synced with what's actually on the shelf",
-      "Daily sales and margin digest at closing time",
-    ],
+    Icon: IconStore,
+    who: "Retail & D2C",
+    examples: "Boutiques · brands · distributors · kitchens",
+    pain: "“I find out I'm out of stock from a customer.”",
+    fix: ["Live stock levels", "Reorder alerts", "Daily sales digest"],
   },
   {
-    who: "Solo founders & small teams",
-    examples: "Agencies, freelancers, 2–15 person operations",
-    pain: "“I'm the sales team, the support team and the accountant.”",
-    fix: [
-      "An agent that answers and qualifies every enquiry instantly",
-      "Proposals, contracts and invoices generated on trigger",
-      "One dashboard replacing six tabs and a notebook",
-    ],
+    Icon: IconSolo,
+    who: "Solo & small teams",
+    examples: "Agencies · freelancers · 2–15 people",
+    pain: "“I'm sales, support and accounts.”",
+    fix: ["Instant lead replies", "Auto proposals", "One dashboard"],
   },
 ];
 
@@ -44,35 +36,35 @@ export default function Audience() {
         </Reveal>
         <Reveal delay={60}>
           <h2 className="mt-4 max-w-2xl font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-            If your business runs on WhatsApp and willpower, you&apos;re in the
-            right place.
+            If it runs on WhatsApp and willpower, you&apos;re in the right place.
           </h2>
         </Reveal>
 
-        <div className="mt-14 space-y-4">
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
           {WHO.map((w, i) => (
-            <Reveal key={w.who} delay={i * 80}>
-              <article className="card card-hover grid gap-7 p-7 sm:p-9 lg:grid-cols-[0.9fr_1fr_1.1fr] lg:items-start">
-                <div>
-                  <h3 className="font-display text-xl font-semibold tracking-tight">
-                    {w.who}
-                  </h3>
-                  <p className="mt-2 text-[0.85rem] text-mute-400">{w.examples}</p>
-                </div>
-                <p className="font-display text-[1.05rem] leading-snug text-mute-300 italic">
+            <Reveal key={w.who} delay={i * 90}>
+              <article className="card card-hover group flex h-full flex-col p-7">
+                <w.Icon className="text-lime-400 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-110" />
+
+                <h3 className="mt-6 font-display text-xl font-semibold tracking-tight">
+                  {w.who}
+                </h3>
+                <p className="mt-1.5 text-[0.8rem] text-mute-400">{w.examples}</p>
+
+                <p className="mt-6 font-display text-[1.05rem] leading-snug text-mute-300">
                   {w.pain}
                 </p>
-                <ul className="space-y-2.5">
+
+                <div className="mt-auto flex flex-wrap gap-1.5 pt-7">
                   {w.fix.map((f) => (
-                    <li
+                    <span
                       key={f}
-                      className="flex gap-2.5 text-[0.92rem] leading-relaxed text-mute-300"
+                      className="rounded-full border border-lime-400/30 bg-lime-400/[0.07] px-2.5 py-1 text-[0.75rem] text-mute-300"
                     >
-                      <span className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 rounded-full bg-lime-400" />
                       {f}
-                    </li>
+                    </span>
                   ))}
-                </ul>
+                </div>
               </article>
             </Reveal>
           ))}

@@ -78,9 +78,8 @@ export default function Contact() {
               </Reveal>
               <Reveal delay={110}>
                 <p className="mt-5 text-[1rem] leading-relaxed text-mute-300">
-                  Tell us how your week actually goes. We&apos;ll come back with
-                  the five places your time and money are leaking, ranked by what
-                  to fix first — and an honest read on whether you need us at all.
+                  Tell us how your week goes. We&apos;ll send back your five
+                  biggest leaks, ranked.
                 </p>
               </Reveal>
 
@@ -88,7 +87,7 @@ export default function Contact() {
                 <ul className="mt-9 space-y-4">
                   {[
                     "Reply within one business day",
-                    "No obligation, no retainer talk on the first call",
+                    "No obligation, no retainer talk",
                     "You keep the teardown either way",
                   ].map((t) => (
                     <li key={t} className="flex items-center gap-3 text-[0.92rem] text-mute-300">

@@ -39,10 +39,8 @@ export default function Hero() {
 
             <Reveal delay={160}>
               <p className="mt-6 max-w-xl text-[1.06rem] leading-relaxed text-mute-300">
-                Shivorra is your whole technology department: consulting, design,
-                websites, custom software, mobile apps and AI automation. We tell
-                you what to build and what to stop paying for — then design it,
-                build it, and keep it running.
+                Your whole technology department. We design it, build it, automate
+                it, and keep it running.
               </p>
             </Reveal>
 
@@ -67,24 +65,40 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={280}>
-              <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-[0.82rem] text-mute-400">
+              <div className="mt-10 flex flex-wrap gap-2">
                 {[
-                  "Fixed scope, fixed price",
-                  "First systems live in 21 days",
-                  "You own every line of code",
-                ].map((t) => (
-                  <span key={t} className="flex items-center gap-2">
-                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                      <circle cx="10" cy="10" r="9" stroke="var(--color-lime-400)" strokeOpacity="0.4" />
+                  ["Fixed price", "M3 10h18M7 15h4"],
+                  ["Live in 21 days", "M12 7v5l3.2 2"],
+                  ["You own the code", "M9 12l2 2 4-4"],
+                ].map(([label, d]) => (
+                  <span
+                    key={label}
+                    className="group inline-flex items-center gap-2 rounded-full border border-ink-600 bg-ink-900/50 px-3.5 py-1.5 text-[0.8rem] text-mute-300 backdrop-blur transition-colors hover:border-lime-400/50"
+                  >
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="text-lime-400 transition-transform duration-300 group-hover:scale-110"
+                      aria-hidden
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="9"
+                        stroke="currentColor"
+                        strokeOpacity="0.35"
+                      />
                       <path
-                        d="M6 10.4l2.6 2.6L14 7.6"
-                        stroke="var(--color-lime-400)"
-                        strokeWidth="1.6"
+                        d={d}
+                        stroke="currentColor"
+                        strokeWidth="1.7"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
-                    {t}
+                    {label}
                   </span>
                 ))}
               </div>

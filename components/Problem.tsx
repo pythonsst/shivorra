@@ -1,30 +1,29 @@
 import CountUp from "./CountUp";
+import FlowDiagram from "./FlowDiagram";
+import { IconClock, IconLeak, IconMaze } from "./Icons";
 import Reveal from "./Reveal";
 
 const LEAKS = [
   {
-    n: "01",
-    t: "Leads rot in the DMs",
-    d: "A quote request at 9pm gets answered at 11am. By then they've booked someone who replied in a minute.",
-    statValue: 78,
-    statSuffix: "%",
-    statLabel: "of buyers pick whoever responds first",
+    Icon: IconLeak,
+    value: 78,
+    suffix: "%",
+    stat: "go to whoever replies first",
+    line: "You answer at 11am. They booked at 9pm.",
   },
   {
-    n: "02",
-    t: "Your numbers live in your head",
-    d: "Three spreadsheets, one WhatsApp group and a notebook. Nobody can answer “how did last month actually go?” without a two-hour reconciliation.",
-    statValue: 2,
-    statSuffix: " hrs",
-    statLabel: "to answer one basic question",
+    Icon: IconMaze,
+    value: 2,
+    suffix: " hrs",
+    stat: "to answer one basic question",
+    line: "Three sheets, a WhatsApp group, a notebook.",
   },
   {
-    n: "03",
-    t: "You are the bottleneck",
-    d: "Every invoice, every follow-up, every schedule change routes through you. Growth means more of your evenings, not more profit.",
-    statValue: 60,
-    statSuffix: "%",
-    statLabel: "of an owner's week is admin, not strategy",
+    Icon: IconClock,
+    value: 60,
+    suffix: "%",
+    stat: "of your week is admin",
+    line: "Growth costs evenings, not profit.",
   },
 ];
 
@@ -32,7 +31,7 @@ export default function Problem() {
   return (
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="max-w-3xl">
+        <div className="max-w-2xl">
           <Reveal>
             <span className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-lime-400">
               The leak
@@ -40,43 +39,38 @@ export default function Problem() {
           </Reveal>
           <Reveal delay={60}>
             <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-              Nothing is broken. That&apos;s the problem.
+              Nothing is broken.
+              <br />
+              That&apos;s the problem.
             </h2>
-          </Reveal>
-          <Reveal delay={120}>
-            <p className="mt-5 text-[1.02rem] leading-relaxed text-mute-300">
-              Businesses rarely die from one disaster. They stall because a
-              hundred small manual steps quietly eat the week — and every one of
-              them is a place a customer can slip out.
-            </p>
           </Reveal>
         </div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {LEAKS.map((l, i) => (
-            <Reveal key={l.n} delay={i * 90}>
+            <Reveal key={l.stat} delay={i * 90}>
               <article className="card card-hover group h-full p-7">
-                <span className="font-mono text-[0.8rem] text-mute-400">
-                  {l.n}
-                </span>
-                <h3 className="mt-4 font-display text-xl font-semibold tracking-tight">
-                  {l.t}
-                </h3>
-                <p className="mt-3 text-[0.94rem] leading-relaxed text-mute-400">
-                  {l.d}
-                </p>
-                <div className="mt-7 border-t border-ink-700/70 pt-5">
-                  <div className="font-display text-3xl font-semibold text-lime-400">
-                    <CountUp to={l.statValue} suffix={l.statSuffix} />
-                  </div>
-                  <div className="mt-1 text-[0.78rem] text-mute-400">
-                    {l.statLabel}
-                  </div>
+                <l.Icon className="text-lime-400 transition-transform duration-500 group-hover:scale-110" />
+                <div className="mt-6 font-display text-[2.6rem] font-semibold leading-none tracking-[-0.02em]">
+                  <CountUp to={l.value} suffix={l.suffix} />
                 </div>
+                <p className="mt-2 text-[0.86rem] text-mute-400">{l.stat}</p>
+                <p className="mt-5 border-t border-ink-700/70 pt-5 font-display text-[1.02rem] leading-snug">
+                  {l.line}
+                </p>
               </article>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={120}>
+          <div className="card mt-6 p-7 sm:p-9">
+            <p className="mb-7 text-center font-display text-[1.15rem] font-semibold tracking-tight sm:text-[1.35rem]">
+              What it looks like fixed
+            </p>
+            <FlowDiagram />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

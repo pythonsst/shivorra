@@ -1,37 +1,46 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
 
 const STEPS = [
-  {
-    n: "01",
-    t: "Audit",
-    when: "Day 0 · free, 45 minutes",
-    d: "We map every manual step in your week and price it in hours and rupees. You leave with a written teardown of your top five leaks — whether or not you hire us.",
-    out: "A ranked list of what to automate first",
-  },
-  {
-    n: "02",
-    t: "Blueprint",
-    when: "Week 1",
-    d: "Fixed scope, fixed price, fixed dates. Screens and flows mocked before a line of code exists, so there are no surprises and no “that's out of scope” conversations later.",
-    out: "Signed plan with dates and a single number",
-  },
-  {
-    n: "03",
-    t: "Ship in slices",
-    when: "Weeks 2–6",
-    d: "Something useful goes live every week instead of one big reveal at the end. Your team adopts it gradually, so nothing about the running business gets disrupted.",
-    out: "Working software in your hands weekly",
-  },
-  {
-    n: "04",
-    t: "Tune & hand over",
-    when: "Ongoing",
-    d: "Agents get reviewed against real transcripts, dashboards get sharpened, and your team gets trained. Code, data and accounts are yours — no hostage situations.",
-    out: "Monthly report on hours and money saved",
-  },
+  { n: "01", t: "Audit", when: "Day 0 · free", d: "We map your week and price every manual step." },
+  { n: "02", t: "Blueprint", when: "Week 1", d: "Fixed scope, fixed price, dates on paper." },
+  { n: "03", t: "Ship in slices", when: "Weeks 2–6", d: "Something useful goes live every week." },
+  { n: "04", t: "Tune", when: "Ongoing", d: "Reviewed monthly. Code and data stay yours." },
 ];
 
 export default function Process() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setProgress(1);
+      return;
+    }
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const r = el.getBoundingClientRect();
+        const start = window.innerHeight * 0.85;
+        const end = window.innerHeight * 0.25;
+        const p = (start - r.top) / (start - end);
+        setProgress(Math.max(0, Math.min(1, p)));
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
     <section id="process" className="relative py-24 sm:py-32">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ink-600 to-transparent" />
@@ -44,52 +53,57 @@ export default function Process() {
           </Reveal>
           <Reveal delay={60}>
             <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-              No discovery theatre. Working software in three weeks.
+              Working software in three weeks.
             </h2>
           </Reveal>
         </div>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-ink-700/70 bg-ink-700/50 sm:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map((s, i) => (
-            <Reveal key={s.n} delay={i * 90}>
-              <div className="group relative h-full bg-ink-900 p-7 transition-colors hover:bg-ink-850">
-                <div className="flex items-center justify-between">
-                  <span className="font-display text-[2.4rem] font-semibold leading-none text-ink-700 transition-colors group-hover:text-lime-400/70">
+        <div ref={ref} className="relative mt-16">
+          {/* rail that fills as you scroll */}
+          <div className="absolute left-0 right-0 top-[22px] hidden h-px bg-ink-600 lg:block">
+            <div
+              className="h-full origin-left bg-gradient-to-r from-lime-400 to-cyan-400"
+              style={{
+                transform: `scaleX(${progress})`,
+                transition: "transform 0.25s linear",
+              }}
+            />
+          </div>
+
+          <ol className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {STEPS.map((s, i) => {
+              const reached = progress > i / STEPS.length;
+              return (
+                <li key={s.n} className="relative">
+                  <span
+                    className="relative z-10 grid h-11 w-11 place-items-center rounded-full border font-display text-[0.9rem] font-semibold transition-all duration-500"
+                    style={{
+                      borderColor: reached
+                        ? "var(--color-lime-400)"
+                        : "var(--color-ink-600)",
+                      background: reached
+                        ? "color-mix(in oklab, var(--color-lime-400) 14%, var(--color-ink-950))"
+                        : "var(--color-ink-950)",
+                      color: reached
+                        ? "var(--color-lime-400)"
+                        : "var(--color-mute-400)",
+                    }}
+                  >
                     {s.n}
                   </span>
-                  {i < STEPS.length - 1 && (
-                    <svg
-                      width="20"
-                      height="10"
-                      viewBox="0 0 20 10"
-                      fill="none"
-                      className="text-ink-600"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M0 5h17M13 1.5L17 5l-4 3.5"
-                        stroke="currentColor"
-                        strokeWidth="1.2"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <h3 className="mt-5 font-display text-lg font-semibold tracking-tight">
-                  {s.t}
-                </h3>
-                <p className="mt-1 font-mono text-[0.72rem] uppercase tracking-wider text-lime-400/80">
-                  {s.when}
-                </p>
-                <p className="mt-4 text-[0.9rem] leading-relaxed text-mute-400">
-                  {s.d}
-                </p>
-                <p className="mt-6 border-t border-ink-700/70 pt-4 text-[0.82rem] text-mute-300">
-                  <span className="text-mute-400">You get: </span>
-                  {s.out}
-                </p>
-              </div>
-            </Reveal>
-          ))}
+                  <h3 className="mt-5 font-display text-lg font-semibold tracking-tight">
+                    {s.t}
+                  </h3>
+                  <p className="mt-1 font-mono text-[0.7rem] uppercase tracking-wider text-lime-400/80">
+                    {s.when}
+                  </p>
+                  <p className="mt-3 text-[0.92rem] leading-relaxed text-mute-400">
+                    {s.d}
+                  </p>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </section>

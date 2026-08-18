@@ -1,89 +1,90 @@
 "use client";
 
 import { useState } from "react";
+import { ICONS, type IconName } from "./Icons";
 import Reveal from "./Reveal";
 
 const LAYERS = [
   {
     key: "consulting",
-    tag: "Layer 00",
+    tag: "00",
+    icon: "compass",
     title: "Consulting",
-    blurb: "An IT department on tap, without the headcount.",
-    body: "Before anyone writes code, someone has to decide what's worth building — and what you should stop paying for. We sit on your side of the table: choosing tools, sizing costs, fixing the infrastructure, and saying no to the software you don't need.",
+    blurb: "An IT department on tap, no headcount.",
     ships: [
-      "Technology audit: what you run, what it costs, what to kill",
-      "Vendor and tool selection — with the licence maths shown",
-      "Cloud setup and migration (AWS, GCP, Azure, Google Workspace)",
-      "Security basics: access control, backups, device and data hygiene",
-      "Ongoing IT support and a roadmap you can budget against",
+      "Audit: what you run, what it costs, what to kill",
+      "Tool and vendor picks, licence maths shown",
+      "Cloud setup and migration",
+      "Access, backups, security basics",
+      "Ongoing support and a budgetable roadmap",
     ],
-    outcome: "Findings inside 2 weeks",
+    outcome: "Findings in 2 weeks",
     accent: "var(--color-paper)",
   },
   {
     key: "design",
-    tag: "Layer 01",
+    tag: "01",
+    icon: "pen",
     title: "Design",
-    blurb: "Buyers judge your competence in three seconds.",
-    body: "Most small-business software looks assembled rather than designed, and customers read that as risk. We build the brand and interface layer first — identity, screens, a clickable prototype you can react to before a single line of engineering is paid for.",
+    blurb: "Buyers judge you in three seconds.",
     ships: [
-      "Brand identity: logo, palette, type, usage rules",
-      "UI/UX design for web and mobile, screen by screen",
-      "Clickable prototype to approve before code starts",
-      "Design system so every future screen stays consistent",
-      "Marketing assets: decks, social templates, print collateral",
+      "Brand identity: logo, palette, type",
+      "UI/UX for web and mobile",
+      "Clickable prototype before code",
+      "Design system for every future screen",
+      "Decks, social and print assets",
     ],
     outcome: "Prototype in 1–2 weeks",
     accent: "var(--color-violet-400)",
   },
   {
     key: "web",
-    tag: "Layer 02",
+    tag: "02",
+    icon: "globe",
     title: "Web",
-    blurb: "A site that closes, not a brochure that sits there.",
-    body: "Most small-business sites are digital business cards. Yours becomes the first salesperson on the team — fast, findable, and built to turn a stranger into a booked slot without you touching the keyboard.",
+    blurb: "A site that closes, not a brochure.",
     ships: [
-      "Conversion-first site, 95+ Lighthouse, sub-second loads",
-      "Local + service SEO, schema markup, Google Business tuning",
-      "E-commerce and payment flows when you sell online",
-      "Instant-quote and booking flows wired to your calendar",
-      "Analytics that report revenue, not vanity pageviews",
+      "Conversion-first build, sub-second loads",
+      "Local and service SEO, done properly",
+      "E-commerce and payments",
+      "Instant quotes, self-serve booking",
+      "Analytics that report revenue",
     ],
     outcome: "Live in 2–3 weeks",
     accent: "var(--color-lime-400)",
   },
   {
     key: "software",
-    tag: "Layer 03",
+    tag: "03",
+    icon: "layers",
     title: "Apps & software",
-    blurb: "One screen that tells you the truth about your business.",
-    body: "We replace the spreadsheet archaeology with software shaped around how you actually operate — web or mobile, not a generic SaaS you'll bend your process to fit. Your team logs in, sees exactly their work, and nothing needs to be asked twice.",
+    blurb: "One screen that tells you the truth.",
     ships: [
-      "Custom web apps, CRMs and job pipelines built to your workflow",
-      "Mobile apps for iOS and Android, published to both stores",
-      "Inventory, staff, roster and cost tracking in one place",
-      "Owner dashboard: cash position, pipeline, margins, live",
-      "Integrations and APIs tying your existing tools together",
-      "Migration of your existing sheets — nothing gets retyped",
+      "Custom CRM and job pipelines",
+      "iOS and Android apps, shipped to stores",
+      "Inventory, staff and cost tracking",
+      "Owner dashboard: cash, pipeline, margin",
+      "Integrations across your existing tools",
+      "Your spreadsheets migrated for you",
     ],
     outcome: "Live in 4–8 weeks",
     accent: "var(--color-cyan-400)",
   },
   {
     key: "automation",
-    tag: "Layer 04",
+    tag: "04",
+    icon: "bolt",
     title: "Automation & AI",
-    blurb: "AI agents that do the work, not chatbots that deflect it.",
-    body: "This is where the compounding starts. Agents that read the enquiry, answer it properly, book the slot, raise the invoice, chase the payment and escalate to a human only when it genuinely matters. Reviewed weekly, tuned monthly.",
+    blurb: "Agents that do the work, not deflect it.",
     ships: [
-      "Lead-response agent: qualifies and replies in under a minute",
-      "Follow-up sequences that never forget a warm lead",
-      "Invoice, reminder and reconciliation automation",
-      "Document and data extraction (bills, POs, forms, WhatsApp)",
-      "Cross-app workflows so your tools stop needing a human relay",
-      "Human-in-the-loop guardrails and a full audit trail",
+      "Replies to every lead in under a minute",
+      "Follow-ups that never forget",
+      "Invoicing, reminders, reconciliation",
+      "Reads bills, forms and WhatsApp",
+      "Cross-app workflows, no human relay",
+      "Human approval where it matters",
     ],
-    outcome: "First agent live in 3 weeks",
+    outcome: "First agent in 3 weeks",
     accent: "var(--color-violet-400)",
   },
 ];
@@ -105,16 +106,13 @@ export default function Services() {
             </Reveal>
             <Reveal delay={60}>
               <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-                Five layers. Everything between
-                <br className="hidden sm:block" /> the idea and the thing running.
+                Idea to running system.
               </h2>
             </Reveal>
           </div>
           <Reveal delay={120}>
             <p className="max-w-sm text-[0.94rem] leading-relaxed text-mute-400">
-              End to end, or just the piece you&apos;re missing. Most clients start
-              where the pain is loudest — often consulting or design — and fund the
-              rest out of what it saves.
+              End to end, or just the piece you&apos;re missing.
             </p>
           </Reveal>
         </div>
@@ -132,10 +130,13 @@ export default function Services() {
                     : "border-ink-600 text-mute-300 hover:border-mute-400 hover:text-paper"
                 }`}
               >
-                <span className="font-mono text-[0.72rem] opacity-60">
-                  {l.tag.replace("Layer ", "")}
-                </span>{" "}
-                {l.title}
+                <span className="flex items-center gap-2">
+                  {(() => {
+                    const I = ICONS[l.icon as IconName];
+                    return <I className="h-[18px] w-[18px]" />;
+                  })()}
+                  {l.title}
+                </span>
               </button>
             ))}
           </div>
@@ -143,18 +144,34 @@ export default function Services() {
           <div className="card mt-6 overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-[1fr_0.85fr]">
               <div className="p-8 sm:p-11">
-                <span
-                  className="font-mono text-[0.72rem] uppercase tracking-[0.18em]"
-                  style={{ color: layer.accent }}
-                >
-                  {layer.tag}
-                </span>
-                <h3 className="mt-4 font-display text-[1.75rem] font-semibold tracking-tight sm:text-[2.1rem]">
+                <div className="flex items-center gap-3">
+                  {(() => {
+                    const I = ICONS[layer.icon as IconName];
+                    return (
+                      <span
+                        className="grid h-11 w-11 place-items-center rounded-xl border"
+                        style={{
+                          color: layer.accent,
+                          borderColor:
+                            "color-mix(in oklab, currentColor 40%, transparent)",
+                          background:
+                            "color-mix(in oklab, currentColor 8%, transparent)",
+                        }}
+                      >
+                        <I />
+                      </span>
+                    );
+                  })()}
+                  <span
+                    className="font-mono text-[0.72rem] uppercase tracking-[0.18em]"
+                    style={{ color: layer.accent }}
+                  >
+                    Layer {layer.tag}
+                  </span>
+                </div>
+                <h3 className="mt-6 font-display text-[1.75rem] font-semibold tracking-tight sm:text-[2.15rem]">
                   {layer.blurb}
                 </h3>
-                <p className="mt-5 text-[1rem] leading-relaxed text-mute-300">
-                  {layer.body}
-                </p>
                 <div className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-ink-600 bg-ink-900/60 px-4 py-2 text-[0.84rem] text-mute-300">
                   <span
                     className="h-1.5 w-1.5 rounded-full"

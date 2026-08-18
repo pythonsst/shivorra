@@ -360,3 +360,50 @@ html {
     display: none;
   }
 }
+
+/* Rotating gradient border for the one card that should pull the eye.
+   @property makes the angle animatable; browsers without it get a
+   static gradient edge, which still looks deliberate. */
+@property --aura-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.aura::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--aura-angle),
+    transparent 0%,
+    var(--color-lime-400) 18%,
+    var(--color-cyan-400) 32%,
+    transparent 55%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: aura-spin 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes aura-spin {
+  to {
+    --aura-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura::before {
+    animation: none;
+  }
+}

@@ -127,7 +127,7 @@ export default function Pricing() {
               <article
                 className={`card card-hover relative flex h-full flex-col p-8 ${
                   t.popular
-                    ? "border-lime-400/45 bg-gradient-to-b from-lime-400/[0.07] to-transparent"
+                    ? "aura border-lime-400/30 bg-gradient-to-b from-lime-400/[0.07] to-transparent"
                     : ""
                 }`}
               >

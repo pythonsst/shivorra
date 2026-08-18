@@ -5,36 +5,36 @@ import Reveal from "./Reveal";
 
 const QA = [
   {
-    q: "I'm not technical at all. Is this going to be over my head?",
-    a: "That's the normal starting point. You describe how your business works in plain language; we handle everything else. What you get back is a screen with buttons that do obvious things, plus a walkthrough with your team. If anyone needs a manual to use it, we built it wrong.",
+    q: "I'm not technical. Is this over my head?",
+    a: "You describe how your business works in plain language; we handle the rest. If anyone needs a manual to use it, we built it wrong.",
   },
   {
-    q: "Will this disrupt the business while you build it?",
-    a: "No. We ship in slices and run new systems alongside the old way until you trust them. Nothing gets switched off on a Friday and prayed over. Your existing spreadsheets keep working during migration, and we do the retyping — not you.",
+    q: "Will this disrupt the business?",
+    a: "No. New systems run alongside the old way until you trust them, and we do the data migration — not you.",
   },
   {
-    q: "How fast is fast?",
-    a: "Audit within a few days of you reaching out. A site typically goes live in 2–3 weeks, custom software in 4–6, and the first AI agent in about 3. You see something working every week, not one big reveal at the end.",
+    q: "How fast?",
+    a: "Site in 2–3 weeks. Custom software in 4–8. First AI agent in about 3. You see something working every week.",
   },
   {
-    q: "Can AI actually be trusted with my customers?",
-    a: "Only where it earns it. Agents handle the mechanical, verifiable work — reading an enquiry, quoting from your rate card, booking a free slot, chasing a payment. Anything ambiguous or high-stakes routes to a human with full context. Every action is logged, so you can read exactly what was said and why.",
+    q: "Can AI be trusted with my customers?",
+    a: "Only where it earns it. Agents handle mechanical, verifiable work; anything ambiguous routes to a human with full context. Every action is logged.",
   },
   {
-    q: "What happens if I stop working with you?",
-    a: "You keep everything. Code in your repository, data in your accounts, domains and API keys in your name, plus written handover docs. The monthly fee buys ongoing improvement, not access to your own business. No lock-in, no hostage situations.",
+    q: "What if I stop working with you?",
+    a: "You keep everything — code, data, domains, accounts, handover docs. No lock-in.",
   },
   {
-    q: "Why fixed price instead of hourly?",
-    a: "Hourly billing pays us for being slow. We scope tightly after the audit and commit to a number and a date. If we underestimated, that's our problem to absorb — not a change-request email to you.",
+    q: "Why fixed price?",
+    a: "Hourly billing pays us for being slow. We scope after the audit and commit to a number and a date.",
   },
   {
-    q: "My business is a bit weird. Will off-the-shelf logic fit?",
-    a: "It usually won't, which is exactly why we build custom. Generic SaaS makes you reshape your process around its assumptions. We look at the way you actually run things — including the bits that seem messy — and build to that.",
+    q: "My business is a bit weird. Will it fit?",
+    a: "It usually won't fit off-the-shelf — which is why we build custom, around how you actually work.",
   },
   {
-    q: "What does the free audit actually involve?",
-    a: "A 45-minute call where we map your week step by step, then a written teardown of your five biggest time-and-money leaks with a recommended order of attack. It's yours whether you hire us or not, and it's genuinely useful even if you hand it to someone else.",
+    q: "What's in the free audit?",
+    a: "45 minutes mapping your week, then a written teardown of your five biggest leaks. Yours whether you hire us or not.",
   },
 ];
 
@@ -54,19 +54,19 @@ export default function FAQ() {
             </Reveal>
             <Reveal delay={60}>
               <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.6rem]">
-                The things people ask before they trust us.
+Before you trust us.
               </h2>
             </Reveal>
             <Reveal delay={110}>
               <p className="mt-5 text-[0.95rem] leading-relaxed text-mute-400">
-                Still something unanswered? Ask it directly —{" "}
+                Something missing?{" "}
                 <a
                   href="mailto:hello@shivorra.it.com"
                   className="text-lime-400 underline underline-offset-4"
                 >
                   hello@shivorra.it.com
                 </a>
-                . Real reply, same day.
+. Same-day reply.
               </p>
             </Reveal>
           </div>
