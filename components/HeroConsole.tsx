@@ -36,7 +36,7 @@ export default function HeroConsole() {
   return (
     <div className="card relative overflow-hidden p-1.5 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)]">
       <div
-        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-40 blur-3xl"
+        className="glow-blob pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-40 blur-3xl"
         style={{
           background:
             "radial-gradient(circle, rgba(201,242,78,0.55), transparent 65%)",

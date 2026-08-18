@@ -6,7 +6,7 @@ export default function Hero() {
     <section id="top" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="grid-bg pointer-events-none absolute inset-0 -z-10" />
       <div
-        className="pointer-events-none absolute left-1/2 top-[-14rem] -z-10 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full opacity-[0.16] blur-[120px]"
+        className="glow-blob pointer-events-none absolute left-1/2 top-[-14rem] -z-10 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full opacity-[0.16] blur-[120px]"
         style={{
           background:
             "conic-gradient(from 210deg, #c9f24e, #4fd8e8, #8b7bff, #c9f24e)",
@@ -75,10 +75,10 @@ export default function Hero() {
                 ].map((t) => (
                   <span key={t} className="flex items-center gap-2">
                     <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                      <circle cx="10" cy="10" r="9" stroke="#c9f24e" strokeOpacity="0.4" />
+                      <circle cx="10" cy="10" r="9" stroke="var(--color-lime-400)" strokeOpacity="0.4" />
                       <path
                         d="M6 10.4l2.6 2.6L14 7.6"
-                        stroke="#c9f24e"
+                        stroke="var(--color-lime-400)"
                         strokeWidth="1.6"
                         strokeLinecap="round"
                         strokeLinejoin="round"

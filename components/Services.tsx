@@ -18,7 +18,7 @@ const LAYERS = [
       "Ongoing IT support and a roadmap you can budget against",
     ],
     outcome: "Findings inside 2 weeks",
-    accent: "#f4f6f8",
+    accent: "var(--color-paper)",
   },
   {
     key: "presence",
@@ -34,7 +34,7 @@ const LAYERS = [
       "Analytics that report revenue, not vanity pageviews",
     ],
     outcome: "Live in 2–3 weeks",
-    accent: "#c9f24e",
+    accent: "var(--color-lime-400)",
   },
   {
     key: "systems",
@@ -50,7 +50,7 @@ const LAYERS = [
       "Migration of your existing sheets — nothing gets retyped",
     ],
     outcome: "Live in 4–6 weeks",
-    accent: "#4fd8e8",
+    accent: "var(--color-cyan-400)",
   },
   {
     key: "autonomy",
@@ -66,7 +66,7 @@ const LAYERS = [
       "Human-in-the-loop guardrails and a full audit trail",
     ],
     outcome: "First agent live in 3 weeks",
-    accent: "#8b7bff",
+    accent: "var(--color-violet-400)",
   },
 ];
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#services", label: "What we build" },
@@ -58,7 +59,8 @@ export default function Nav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          <ThemeToggle />
           <a
             href="#contact"
             className="hidden rounded-full bg-lime-400 px-5 py-2.5 text-[0.875rem] font-semibold text-ink-950 transition-all hover:bg-lime-500 hover:shadow-[0_10px_36px_-10px_rgba(201,242,78,0.7)] sm:inline-block"

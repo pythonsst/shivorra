@@ -82,7 +82,7 @@ export default function Calculator() {
   return (
     <section id="calculator" className="relative py-24 sm:py-32">
       <div
-        className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[26rem] w-[42rem] -translate-x-1/2 rounded-full opacity-[0.10] blur-[110px]"
+        className="glow-blob pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[26rem] w-[42rem] -translate-x-1/2 rounded-full opacity-[0.10] blur-[110px]"
         style={{ background: "radial-gradient(circle, #c9f24e, transparent 65%)" }}
       />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">

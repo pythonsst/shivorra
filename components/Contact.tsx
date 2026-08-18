@@ -54,7 +54,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-24 sm:py-32">
       <div
-        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[30rem] w-[46rem] -translate-x-1/2 rounded-full opacity-[0.13] blur-[120px]"
+        className="glow-blob pointer-events-none absolute left-1/2 top-0 -z-10 h-[30rem] w-[46rem] -translate-x-1/2 rounded-full opacity-[0.13] blur-[120px]"
         style={{
           background:
             "conic-gradient(from 140deg, #4fd8e8, #c9f24e, #8b7bff, #4fd8e8)",
@@ -94,7 +94,7 @@ export default function Contact() {
                         <svg width="12" height="12" viewBox="0 0 20 20" fill="none">
                           <path
                             d="M4 10.6l3.4 3.4L16 5.6"
-                            stroke="#c9f24e"
+                            stroke="var(--color-lime-400)"
                             strokeWidth="2.2"
                             strokeLinecap="round"
                             strokeLinejoin="round"

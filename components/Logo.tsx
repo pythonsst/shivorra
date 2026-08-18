@@ -25,11 +25,11 @@ export default function Logo({ className = "" }: { className?: string }) {
           strokeWidth="1.9"
           strokeLinecap="round"
         />
-        <circle cx="22.6" cy="10.4" r="2" fill="#c9f24e" />
+        <circle cx="22.6" cy="10.4" r="2" fill="var(--color-lime-400)" />
         <defs>
           <linearGradient id="lg" x1="4" y1="4" x2="28" y2="28">
-            <stop stopColor="#c9f24e" />
-            <stop offset="1" stopColor="#4fd8e8" />
+            <stop stopColor="var(--color-lime-400)" />
+            <stop offset="1" stopColor="var(--color-cyan-400)" />
           </linearGradient>
         </defs>
       </svg>

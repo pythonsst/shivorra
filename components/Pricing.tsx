@@ -173,7 +173,7 @@ export default function Pricing() {
                       >
                         <path
                           d="M4 10.6l3.4 3.4L16 5.6"
-                          stroke="#c9f24e"
+                          stroke="var(--color-lime-400)"
                           strokeWidth="1.9"
                           strokeLinecap="round"
                           strokeLinejoin="round"

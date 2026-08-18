@@ -86,7 +86,7 @@ body {
 
 ::selection {
   background: var(--color-lime-400);
-  color: #06070a;
+  color: var(--color-ink-950);
 }
 
 /* ---------- utilities ---------- */
@@ -104,8 +104,8 @@ body {
 .gradient-text {
   background: linear-gradient(
     100deg,
-    #f4f6f8 0%,
-    #f4f6f8 42%,
+    var(--color-paper) 0%,
+    var(--color-paper) 42%,
     var(--color-lime-400) 72%,
     var(--color-cyan-400) 100%
   );
@@ -211,4 +211,77 @@ input[type="range"]::-moz-range-thumb {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* ============================================================
+   THEMES
+   Base :root above is the dark palette. Light overrides flip the
+   same token names, so every existing utility class re-themes with
+   no markup changes. Order matters: system-light, then explicit
+   light, then explicit dark last so a manual choice always wins.
+   ============================================================ */
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --color-ink-950: #ffffff;
+    --color-ink-900: #f6f8fa;
+    --color-ink-850: #f0f3f6;
+    --color-ink-800: #eaeef2;
+    --color-ink-700: #dfe4ea;
+    --color-ink-600: #cfd6de;
+    --color-mute-400: #5c6673;
+    --color-mute-300: #3d4653;
+    --color-paper: #0b0e13;
+    --color-lime-400: #4c7a0b;
+    --color-lime-500: #3f6608;
+    --color-violet-400: #6d28d9;
+    --color-cyan-400: #0e7490;
+  }
+}
+
+:root[data-theme="light"] {
+  --color-ink-950: #ffffff;
+  --color-ink-900: #f6f8fa;
+  --color-ink-850: #f0f3f6;
+  --color-ink-800: #eaeef2;
+  --color-ink-700: #dfe4ea;
+  --color-ink-600: #cfd6de;
+  --color-mute-400: #5c6673;
+  --color-mute-300: #3d4653;
+  --color-paper: #0b0e13;
+  --color-lime-400: #4c7a0b;
+  --color-lime-500: #3f6608;
+  --color-violet-400: #6d28d9;
+  --color-cyan-400: #0e7490;
+}
+
+:root[data-theme="dark"] {
+  --color-ink-950: #06070a;
+  --color-ink-900: #0a0c11;
+  --color-ink-850: #0e1118;
+  --color-ink-800: #14171f;
+  --color-ink-700: #1c2029;
+  --color-ink-600: #2a2f3a;
+  --color-mute-400: #8b93a1;
+  --color-mute-300: #aab2c0;
+  --color-paper: #f4f6f8;
+  --color-lime-400: #c9f24e;
+  --color-lime-500: #b4e02f;
+  --color-violet-400: #8b7bff;
+  --color-cyan-400: #4fd8e8;
+}
+
+/* Decorative glows read as muddy washes on a light ground. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .glow-blob {
+    opacity: 0.09 !important;
+  }
+}
+
+:root[data-theme="light"] .glow-blob {
+  opacity: 0.09 !important;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
