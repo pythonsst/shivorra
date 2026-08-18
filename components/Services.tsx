@@ -21,41 +21,58 @@ const LAYERS = [
     accent: "var(--color-paper)",
   },
   {
-    key: "presence",
+    key: "design",
     tag: "Layer 01",
-    title: "Presence",
+    title: "Design",
+    blurb: "Buyers judge your competence in three seconds.",
+    body: "Most small-business software looks assembled rather than designed, and customers read that as risk. We build the brand and interface layer first — identity, screens, a clickable prototype you can react to before a single line of engineering is paid for.",
+    ships: [
+      "Brand identity: logo, palette, type, usage rules",
+      "UI/UX design for web and mobile, screen by screen",
+      "Clickable prototype to approve before code starts",
+      "Design system so every future screen stays consistent",
+      "Marketing assets: decks, social templates, print collateral",
+    ],
+    outcome: "Prototype in 1–2 weeks",
+    accent: "var(--color-violet-400)",
+  },
+  {
+    key: "web",
+    tag: "Layer 02",
+    title: "Web",
     blurb: "A site that closes, not a brochure that sits there.",
     body: "Most small-business sites are digital business cards. Yours becomes the first salesperson on the team — fast, findable, and built to turn a stranger into a booked slot without you touching the keyboard.",
     ships: [
       "Conversion-first site, 95+ Lighthouse, sub-second loads",
       "Local + service SEO, schema markup, Google Business tuning",
+      "E-commerce and payment flows when you sell online",
       "Instant-quote and booking flows wired to your calendar",
-      "WhatsApp-first lead capture with auto-acknowledgement",
       "Analytics that report revenue, not vanity pageviews",
     ],
     outcome: "Live in 2–3 weeks",
     accent: "var(--color-lime-400)",
   },
   {
-    key: "systems",
-    tag: "Layer 02",
-    title: "Systems",
+    key: "software",
+    tag: "Layer 03",
+    title: "Apps & software",
     blurb: "One screen that tells you the truth about your business.",
-    body: "We replace the spreadsheet archaeology with software shaped around how you actually operate — not a generic SaaS you'll bend your process to fit. Your team logs in, sees exactly their work, and nothing needs to be asked twice.",
+    body: "We replace the spreadsheet archaeology with software shaped around how you actually operate — web or mobile, not a generic SaaS you'll bend your process to fit. Your team logs in, sees exactly their work, and nothing needs to be asked twice.",
     ships: [
-      "Custom CRM / job pipeline built to your real workflow",
+      "Custom web apps, CRMs and job pipelines built to your workflow",
+      "Mobile apps for iOS and Android, published to both stores",
       "Inventory, staff, roster and cost tracking in one place",
       "Owner dashboard: cash position, pipeline, margins, live",
-      "Role-based access so staff see their lane only",
+      "Integrations and APIs tying your existing tools together",
       "Migration of your existing sheets — nothing gets retyped",
     ],
-    outcome: "Live in 4–6 weeks",
+    outcome: "Live in 4–8 weeks",
     accent: "var(--color-cyan-400)",
   },
   {
-    key: "autonomy",
-    tag: "Layer 03",
-    title: "Autonomy",
+    key: "automation",
+    tag: "Layer 04",
+    title: "Automation & AI",
     blurb: "AI agents that do the work, not chatbots that deflect it.",
     body: "This is where the compounding starts. Agents that read the enquiry, answer it properly, book the slot, raise the invoice, chase the payment and escalate to a human only when it genuinely matters. Reviewed weekly, tuned monthly.",
     ships: [
@@ -63,6 +80,7 @@ const LAYERS = [
       "Follow-up sequences that never forget a warm lead",
       "Invoice, reminder and reconciliation automation",
       "Document and data extraction (bills, POs, forms, WhatsApp)",
+      "Cross-app workflows so your tools stop needing a human relay",
       "Human-in-the-loop guardrails and a full audit trail",
     ],
     outcome: "First agent live in 3 weeks",
@@ -87,16 +105,16 @@ export default function Services() {
             </Reveal>
             <Reveal delay={60}>
               <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-                Four layers. Built in order,
-                <br className="hidden sm:block" /> so each one pays for the next.
+                Five layers. Everything between
+                <br className="hidden sm:block" /> the idea and the thing running.
               </h2>
             </Reveal>
           </div>
           <Reveal delay={120}>
             <p className="max-w-sm text-[0.94rem] leading-relaxed text-mute-400">
-              You don&apos;t need all four on day one. Most clients start at the
-              layer where the pain is loudest — often just consulting — and fund
-              the rest from what it saves.
+              End to end, or just the piece you&apos;re missing. Most clients start
+              where the pain is loudest — often consulting or design — and fund the
+              rest out of what it saves.
             </p>
           </Reveal>
         </div>

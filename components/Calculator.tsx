@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Reveal from "./Reveal";
 
 const AUTOMATABLE = 0.65; // share of repetitive admin we typically remove
@@ -11,6 +11,38 @@ function inr(n: number) {
   if (v >= 10000000) return `₹${(v / 10000000).toFixed(2)} Cr`;
   if (v >= 100000) return `₹${(v / 100000).toFixed(1)} L`;
   return `₹${v.toLocaleString("en-IN")}`;
+}
+
+
+/** Eases toward a target so dragging a slider reads as motion, not a jump. */
+function useTween(target: number, ms = 420) {
+  const [value, setValue] = useState(target);
+  const from = useRef(target);
+  const raf = useRef(0);
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setValue(target);
+      return;
+    }
+    const start = performance.now();
+    const a = from.current;
+    const step = (now: number) => {
+      const t = Math.min(1, (now - start) / ms);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const v = a + (target - a) * eased;
+      setValue(v);
+      from.current = v;
+      if (t < 1) raf.current = requestAnimationFrame(step);
+    };
+    raf.current = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf.current);
+  }, [target, ms]);
+
+  return value;
 }
 
 function Slider({
@@ -78,6 +110,8 @@ export default function Calculator() {
       daysBack: (hoursSavedWeek * 52) / 8,
     };
   }, [people, hours, rate, slowLeads, dealValue]);
+
+  const totalShown = useTween(r.total);
 
   return (
     <section id="calculator" className="relative py-24 sm:py-32">
@@ -160,7 +194,7 @@ export default function Calculator() {
                   Recoverable in year one
                 </p>
                 <p className="mt-3 font-display text-[3rem] font-semibold leading-none tracking-[-0.03em] text-lime-400 tabular-nums sm:text-[3.6rem]">
-                  {inr(r.total)}
+                  {inr(totalShown)}
                 </p>
                 <p className="mt-4 text-[0.92rem] leading-relaxed text-mute-300">
                   {inr(r.adminSaved)} in admin time you stop paying for, plus{" "}
@@ -204,7 +238,7 @@ export default function Calculator() {
                 </p>
                 <a
                   href="#contact"
-                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-paper px-6 py-3 font-semibold text-ink-950 transition-transform hover:-translate-y-0.5"
+                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-paper px-6 py-3 font-semibold text-ink-950 transition-transform hover:-translate-y-0.5 active:scale-[0.98]"
                 >
                   Pressure-test this on a call →
                 </a>

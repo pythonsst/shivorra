@@ -285,3 +285,78 @@ input[type="range"]::-moz-range-thumb {
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* ============================================================
+   POLISH
+   ============================================================ */
+
+/* Keyboard focus. Element+pseudo-class outranks Tailwind's
+   .outline-none on the inputs, so these actually show. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-lime-400);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Scrollbar, themed rather than the OS default slab. */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-600);
+  border: 3px solid var(--color-ink-900);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-mute-400);
+}
+html {
+  scrollbar-color: var(--color-ink-600) var(--color-ink-900);
+  scrollbar-width: thin;
+}
+
+/* Cursor-tracked sheen on cards. --mx/--my are set by Spotlight. */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    440px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in oklab, var(--color-lime-400) 9%, transparent),
+    transparent 60%
+  );
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Let the reader stop the logo strip to actually read it. */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Tabular figures so animated counters don't jitter the layout. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card::after {
+    display: none;
+  }
+}

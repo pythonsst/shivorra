@@ -31,7 +31,7 @@ export default function Marquee() {
             "linear-gradient(to right, transparent, #000 12%, #000 88%, transparent)",
         }}
       >
-        <ul className="flex w-max animate-marquee items-center gap-10 pr-10">
+        <ul className="marquee-track flex w-max animate-marquee items-center gap-10 pr-10">
           {row.map((t, i) => (
             <li
               key={`${t}-${i}`}

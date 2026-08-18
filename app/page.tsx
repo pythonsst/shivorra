@@ -1,4 +1,5 @@
 import Audience from "@/components/Audience";
+import BackToTop from "@/components/BackToTop";
 import Blueprints from "@/components/Blueprints";
 import Calculator from "@/components/Calculator";
 import Contact from "@/components/Contact";
@@ -11,10 +12,12 @@ import Pricing from "@/components/Pricing";
 import Problem from "@/components/Problem";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
+import Spotlight from "@/components/Spotlight";
 
 export default function Home() {
   return (
     <>
+      <Spotlight />
       <Nav />
       <main>
         <Hero />
@@ -30,6 +33,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

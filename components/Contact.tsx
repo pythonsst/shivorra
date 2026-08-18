@@ -11,8 +11,10 @@ const WHATSAPP =
 
 const GOALS = [
   "IT consulting / advisory",
-  "Website & digital presence",
-  "Custom software or dashboard",
+  "Brand & UI/UX design",
+  "Website or e-commerce",
+  "Custom software / dashboard",
+  "Mobile app (iOS / Android)",
   "AI agents & automation",
   "Cloud, infra & IT support",
   "Not sure yet — audit me",
@@ -24,7 +26,7 @@ export default function Contact() {
     business: "",
     email: "",
     phone: "",
-    goal: GOALS[5],
+    goal: GOALS[GOALS.length - 1],
     notes: "",
   });
 
@@ -203,7 +205,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-lime-400 px-6 py-3.5 font-semibold text-ink-950 transition-all hover:bg-lime-500 hover:shadow-[0_14px_44px_-12px_rgba(201,242,78,0.7)]"
+                  className="w-full rounded-full bg-lime-400 px-6 py-3.5 font-semibold text-ink-950 transition-all active:scale-[0.98] hover:bg-lime-500 hover:shadow-[0_14px_44px_-12px_rgba(201,242,78,0.7)]"
                 >
                   Send and book my audit →
                 </button>

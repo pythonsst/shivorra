@@ -12,6 +12,7 @@ const TIERS = [
     run: "₹4,000",
     popular: false,
     includes: [
+      "Brand and UI design pass before build starts",
       "5–7 page conversion site, yours to keep",
       "Local SEO + Google Business setup",
       "WhatsApp enquiry capture with instant auto-reply",
@@ -34,6 +35,7 @@ const TIERS = [
     includes: [
       "Everything in Launch",
       "Custom CRM / job pipeline built to your workflow",
+      "Full UI/UX design with a clickable prototype first",
       "Inventory, staff or roster tracking",
       "Owner dashboard: cash, pipeline, margins",
       "Existing spreadsheets migrated for you",
@@ -188,7 +190,7 @@ export default function Pricing() {
                   href="#contact"
                   className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3 font-semibold transition-all ${
                     t.popular
-                      ? "bg-lime-400 text-ink-950 hover:bg-lime-500"
+                      ? "bg-lime-400 text-ink-950 hover:bg-lime-500 active:scale-[0.98]"
                       : "border border-ink-600 text-paper hover:border-mute-400 hover:bg-ink-800/60"
                   }`}
                 >
@@ -198,6 +200,52 @@ export default function Pricing() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={145}>
+          <div className="card mt-5 p-7 sm:p-8">
+            <h3 className="font-display text-lg font-semibold tracking-tight">
+              Scoped separately
+            </h3>
+            <p className="mt-2 max-w-2xl text-[0.9rem] leading-relaxed text-mute-400">
+              Bigger pieces of work get their own quote after the audit, because
+              honest numbers need a scope first.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              {[
+                {
+                  t: "Mobile app (iOS + Android)",
+                  d: "Design, build, store submission and post-launch support.",
+                  p: "from ₹3,50,000",
+                },
+                {
+                  t: "Brand & design system",
+                  d: "Identity, UI kit, prototype — standalone, no build required.",
+                  p: "from ₹60,000",
+                },
+                {
+                  t: "E-commerce build",
+                  d: "Catalogue, payments, inventory sync and order automation.",
+                  p: "from ₹1,50,000",
+                },
+              ].map((a) => (
+                <div
+                  key={a.t}
+                  className="rounded-xl border border-ink-700/70 bg-ink-950/40 p-5"
+                >
+                  <p className="font-display text-[0.98rem] font-semibold tracking-tight">
+                    {a.t}
+                  </p>
+                  <p className="mt-2 text-[0.82rem] leading-relaxed text-mute-400">
+                    {a.d}
+                  </p>
+                  <p className="mt-3 text-[0.86rem] font-medium text-lime-400">
+                    {a.p}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
 
         <Reveal delay={150}>
           <div className="card mt-5 flex flex-col items-start justify-between gap-6 p-7 sm:flex-row sm:items-center sm:p-8">

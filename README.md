@@ -1,6 +1,7 @@
 # Shivorra — shivorra.it.com
 
-Marketing site for Shivorra: IT consultancy & AI automation studio.
+Marketing site for Shivorra: end-to-end technology partner (consulting,
+design, web, apps, AI automation).
 Next.js 15 (App Router) + Tailwind CSS v4. Fully static — no server needed.
 
 ## Run it
@@ -20,7 +21,9 @@ npm run build    # production build
 | `app/globals.css` | Design tokens (colors, fonts, animations) + utilities |
 | `components/Hero.tsx` | Headline, CTAs, trust bar |
 | `components/HeroConsole.tsx` | Animated "ops runtime" log in the hero |
-| `components/Services.tsx` | Four-layer offering (Consulting → Presence → Systems → Autonomy) |
+| `components/Services.tsx` | Five-layer offering (Consulting → Design → Web → Apps & software → Automation & AI) |
+| `components/ThemeToggle.tsx` | Light/dark toggle; palettes live in `globals.css` |
+| `components/Spotlight.tsx` | Cursor-tracked sheen on `.card` elements |
 | `components/Calculator.tsx` | Live ROI calculator + its assumptions |
 | `components/Pricing.tsx` | Tiers, build/care toggle, consulting rate |
 | `components/FAQ.tsx` | Accordion |

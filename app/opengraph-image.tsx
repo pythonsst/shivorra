@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Shivorra — IT consultancy & AI automation studio. You're paying people to do robot work.";
+  "Shivorra — end-to-end technology partner. You're paying people to do robot work.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -93,7 +93,7 @@ export default function OpengraphImage() {
               maxWidth: 900,
             }}
           >
-            {"IT consultancy & AI automation studio. We tell you what to build — then build it."}
+            {"Consulting, design, web, apps and AI automation — one partner from idea to running system."}
           </div>
         </div>
 

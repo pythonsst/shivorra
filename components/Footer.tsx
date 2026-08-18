@@ -5,8 +5,10 @@ const COLS = [
     h: "Services",
     links: [
       ["IT consulting & advisory", "#services"],
-      ["Digital presence", "#services"],
-      ["Custom software", "#services"],
+      ["Brand & UI/UX design", "#services"],
+      ["Websites & e-commerce", "#services"],
+      ["Custom software & apps", "#services"],
+      ["Mobile apps", "#services"],
       ["AI agents & automation", "#services"],
     ],
   },
@@ -38,9 +40,9 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-5 max-w-xs text-[0.92rem] leading-relaxed text-mute-400">
-              IT consultancy and AI automation studio. We rebuild the boring half
-              of your business as software — so the people you pay can do work
-              only people can do.
+              End-to-end technology partner: consulting, design, websites, custom
+              software, mobile apps and AI automation — so the people you pay can
+              do work only people can do.
             </p>
             <p className="mt-6 font-mono text-[0.76rem] text-mute-400">
               shivorra.it.com

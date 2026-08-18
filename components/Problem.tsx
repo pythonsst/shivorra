@@ -1,3 +1,4 @@
+import CountUp from "./CountUp";
 import Reveal from "./Reveal";
 
 const LEAKS = [
@@ -5,21 +6,24 @@ const LEAKS = [
     n: "01",
     t: "Leads rot in the DMs",
     d: "A quote request at 9pm gets answered at 11am. By then they've booked someone who replied in a minute.",
-    stat: "78%",
+    statValue: 78,
+    statSuffix: "%",
     statLabel: "of buyers pick whoever responds first",
   },
   {
     n: "02",
     t: "Your numbers live in your head",
     d: "Three spreadsheets, one WhatsApp group and a notebook. Nobody can answer “how did last month actually go?” without a two-hour reconciliation.",
-    stat: "2 hrs",
+    statValue: 2,
+    statSuffix: " hrs",
     statLabel: "to answer one basic question",
   },
   {
     n: "03",
     t: "You are the bottleneck",
     d: "Every invoice, every follow-up, every schedule change routes through you. Growth means more of your evenings, not more profit.",
-    stat: "60%",
+    statValue: 60,
+    statSuffix: "%",
     statLabel: "of an owner's week is admin, not strategy",
   },
 ];
@@ -63,7 +67,7 @@ export default function Problem() {
                 </p>
                 <div className="mt-7 border-t border-ink-700/70 pt-5">
                   <div className="font-display text-3xl font-semibold text-lime-400">
-                    {l.stat}
+                    <CountUp to={l.statValue} suffix={l.statSuffix} />
                   </div>
                   <div className="mt-1 text-[0.78rem] text-mute-400">
                     {l.statLabel}

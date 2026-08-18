@@ -39,10 +39,10 @@ export default function Hero() {
 
             <Reveal delay={160}>
               <p className="mt-6 max-w-xl text-[1.06rem] leading-relaxed text-mute-300">
-                Shivorra is an IT consultancy that ships. We tell you what to
-                build and what to stop paying for — then build it: sites that
-                sell, dashboards that tell the truth, and AI agents that chase
-                leads, raise invoices and fill your calendar while you sleep.
+                Shivorra is your whole technology department: consulting, design,
+                websites, custom software, mobile apps and AI automation. We tell
+                you what to build and what to stop paying for — then design it,
+                build it, and keep it running.
               </p>
             </Reveal>
 
@@ -50,7 +50,7 @@ export default function Hero() {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href="#contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-lime-400 px-7 py-3.5 font-semibold text-ink-950 transition-all hover:bg-lime-500 hover:shadow-[0_14px_44px_-12px_rgba(201,242,78,0.75)]"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-lime-400 px-7 py-3.5 font-semibold text-ink-950 transition-all active:scale-[0.98] hover:bg-lime-500 hover:shadow-[0_14px_44px_-12px_rgba(201,242,78,0.75)]"
                 >
                   Get a free automation audit
                   <span className="transition-transform group-hover:translate-x-0.5">
