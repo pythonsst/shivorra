@@ -6,11 +6,11 @@ import ScrollProgress from "./ScrollProgress";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { href: "#services", label: "What we build" },
+  { href: "#services", label: "What we do" },
   { href: "#process", label: "How it works" },
-  { href: "#calculator", label: "ROI calculator" },
+  { href: "#calculator", label: "Savings calculator" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#faq", label: "Questions" },
 ];
 
 export default function Nav() {
@@ -96,7 +96,7 @@ export default function Nav() {
             href="#contact"
             className="hidden rounded-full bg-lime-400 px-5 py-2.5 text-[0.875rem] font-semibold text-ink-950 transition-all active:scale-[0.98] hover:bg-lime-500 hover:shadow-[0_10px_36px_-10px_rgba(201,242,78,0.7)] sm:inline-block"
           >
-            Book a free audit
+            Book a free chat
           </a>
           <button
             onClick={() => setOpen((v) => !v)}
@@ -145,7 +145,7 @@ export default function Nav() {
               onClick={() => setOpen(false)}
               className="block rounded-full bg-lime-400 py-3 text-center font-semibold text-ink-950"
             >
-              Book a free audit
+              Book a free chat
             </a>
           </li>
         </ul>

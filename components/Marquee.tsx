@@ -22,7 +22,7 @@ export default function Marquee() {
   return (
     <section className="border-y border-ink-700/60 bg-ink-900/40 py-7">
       <p className="mb-6 text-center text-[0.7rem] uppercase tracking-[0.22em] text-mute-400">
-        We plug into the tools you already pay for
+        Works with the tools you already use
       </p>
       <div
         className="relative flex overflow-hidden"

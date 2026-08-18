@@ -6,85 +6,85 @@ import Reveal from "./Reveal";
 
 const LAYERS = [
   {
-    key: "consulting",
-    tag: "00",
+    key: "advice",
+    tag: "Start here",
     icon: "compass",
-    title: "Consulting",
-    blurb: "An IT department on tap, no headcount.",
+    title: "Advice",
+    blurb: "Know what to fix first.",
     ships: [
-      "Audit: what you run, what it costs, what to kill",
-      "Tool and vendor picks, licence maths shown",
-      "Cloud setup and migration",
-      "Access, backups, security basics",
-      "Ongoing support and a budgetable roadmap",
+      "A plain look at what you're paying for each month",
+      "Which tools to keep and which to cancel",
+      "Move your files and email somewhere safe",
+      "Backups, so nothing can be lost",
+      "Someone to call when tech goes wrong",
     ],
-    outcome: "Findings in 2 weeks",
+    outcome: "You'll know within 2 weeks",
     accent: "var(--color-paper)",
   },
   {
     key: "design",
-    tag: "01",
+    tag: "Look the part",
     icon: "pen",
     title: "Design",
-    blurb: "Buyers judge you in three seconds.",
+    blurb: "Look like a business people trust.",
     ships: [
-      "Brand identity: logo, palette, type",
-      "UI/UX for web and mobile",
-      "Clickable prototype before code",
-      "Design system for every future screen",
-      "Decks, social and print assets",
+      "A logo, colours and a look that's yours",
+      "Screens designed before anything is built",
+      "See it and click it before you pay to build it",
+      "Everything matches as you grow",
+      "Brochures, decks and social posts",
     ],
-    outcome: "Prototype in 1–2 weeks",
+    outcome: "See it in 1–2 weeks",
     accent: "var(--color-violet-400)",
   },
   {
-    key: "web",
-    tag: "02",
+    key: "website",
+    tag: "Get found",
     icon: "globe",
-    title: "Web",
-    blurb: "A site that closes, not a brochure.",
+    title: "Website",
+    blurb: "Get found, then get booked.",
     ships: [
-      "Conversion-first build, sub-second loads",
-      "Local and service SEO, done properly",
-      "E-commerce and payments",
-      "Instant quotes, self-serve booking",
-      "Analytics that report revenue",
+      "A fast website that turns visitors into customers",
+      "Show up on Google when people search for you",
+      "Sell online and take payments",
+      "Customers book themselves into your diary",
+      "See where your customers actually come from",
     ],
     outcome: "Live in 2–3 weeks",
     accent: "var(--color-lime-400)",
   },
   {
     key: "software",
-    tag: "03",
+    tag: "Get organised",
     icon: "layers",
-    title: "Apps & software",
-    blurb: "One screen that tells you the truth.",
+    title: "Software & apps",
+    blurb: "One screen instead of six spreadsheets.",
     ships: [
-      "Custom CRM and job pipelines",
-      "iOS and Android apps, shipped to stores",
-      "Inventory, staff and cost tracking",
-      "Owner dashboard: cash, pipeline, margin",
-      "Integrations across your existing tools",
-      "Your spreadsheets migrated for you",
+      "One place to track every customer and job",
+      "Your own app for iPhone and Android",
+      "Know what stock, staff and costs you have",
+      "One screen: money in, money out, what's coming",
+      "Works with the tools you already use",
+      "We move your spreadsheets across for you",
     ],
-    outcome: "Live in 4–8 weeks",
+    outcome: "Ready in 4–8 weeks",
     accent: "var(--color-cyan-400)",
   },
   {
     key: "automation",
-    tag: "04",
+    tag: "Get time back",
     icon: "bolt",
-    title: "Automation & AI",
-    blurb: "Agents that do the work, not deflect it.",
+    title: "Automation",
+    blurb: "The busywork does itself.",
     ships: [
-      "Replies to every lead in under a minute",
-      "Follow-ups that never forget",
-      "Invoicing, reminders, reconciliation",
-      "Reads bills, forms and WhatsApp",
-      "Cross-app workflows, no human relay",
-      "Human approval where it matters",
+      "Every enquiry answered in under a minute",
+      "Nobody gets forgotten or followed up late",
+      "Invoices, reminders and receipts sent for you",
+      "Your bills and forms read automatically",
+      "You approve anything that matters",
+      "See exactly what it did, any time",
     ],
-    outcome: "First agent in 3 weeks",
+    outcome: "Working in 3 weeks",
     accent: "var(--color-violet-400)",
   },
 ];
@@ -101,18 +101,19 @@ export default function Services() {
           <div className="max-w-2xl">
             <Reveal>
               <span className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-lime-400">
-                What we build
+                What we do
               </span>
             </Reveal>
             <Reveal delay={60}>
               <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-                Idea to running system.
+                Five ways we help. Pick one, or all of them.
               </h2>
             </Reveal>
           </div>
           <Reveal delay={120}>
             <p className="max-w-sm text-[0.94rem] leading-relaxed text-mute-400">
-              End to end, or just the piece you&apos;re missing.
+              Most people start with whatever hurts most, then use the savings
+              to pay for the next bit.
             </p>
           </Reveal>
         </div>
@@ -166,7 +167,7 @@ export default function Services() {
                     className="font-mono text-[0.72rem] uppercase tracking-[0.18em]"
                     style={{ color: layer.accent }}
                   >
-                    Layer {layer.tag}
+                    {layer.tag}
                   </span>
                 </div>
                 <h3 className="mt-6 font-display text-[1.75rem] font-semibold tracking-tight sm:text-[2.15rem]">
@@ -183,7 +184,7 @@ export default function Services() {
 
               <div className="border-t border-ink-700/70 bg-ink-950/50 p-8 sm:p-11 lg:border-l lg:border-t-0">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-mute-400">
-                  What ships
+                  What you get
                 </p>
                 <ul className="mt-6 space-y-4">
                   {layer.ships.map((s) => (

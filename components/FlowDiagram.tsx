@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const NODES = [
-  { label: "Enquiry", sub: "DM · call · form" },
-  { label: "Qualified", sub: "scored in 11s" },
-  { label: "Booked", sub: "calendar synced" },
-  { label: "Invoiced", sub: "paid + filed" },
+  { label: "They ask", sub: "call, DM or form" },
+  { label: "It replies", sub: "in 11 seconds" },
+  { label: "They book", sub: "straight into your diary" },
+  { label: "You get paid", sub: "invoice sent, money in" },
 ];
 
 export default function FlowDiagram() {
@@ -91,7 +91,7 @@ export default function FlowDiagram() {
         })}
       </div>
       <p className="mt-4 text-center font-mono text-[0.7rem] uppercase tracking-[0.18em] text-mute-400">
-        zero humans touched this
+        nobody had to lift a finger
       </p>
     </div>
   );

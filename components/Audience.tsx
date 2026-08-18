@@ -7,21 +7,21 @@ const WHO = [
     who: "Service businesses",
     examples: "Clinics · salons · studios · contractors",
     pain: "“Half my day is rescheduling people.”",
-    fix: ["Self-serve booking", "Deposits up front", "No-show reminders"],
+    fix: ["Customers book themselves", "Deposits taken up front", "Reminders sent for you"],
   },
   {
     Icon: IconStore,
-    who: "Retail & D2C",
+    who: "Shops & brands",
     examples: "Boutiques · brands · distributors · kitchens",
     pain: "“I find out I'm out of stock from a customer.”",
-    fix: ["Live stock levels", "Reorder alerts", "Daily sales digest"],
+    fix: ["Live stock levels", "Warned before you run out", "Daily sales summary"],
   },
   {
     Icon: IconSolo,
-    who: "Solo & small teams",
+    who: "Small teams",
     examples: "Agencies · freelancers · 2–15 people",
     pain: "“I'm sales, support and accounts.”",
-    fix: ["Instant lead replies", "Auto proposals", "One dashboard"],
+    fix: ["Instant replies", "Quotes written for you", "One clear screen"],
   },
 ];
 
@@ -36,7 +36,8 @@ export default function Audience() {
         </Reveal>
         <Reveal delay={60}>
           <h2 className="mt-4 max-w-2xl font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-            If it runs on WhatsApp and willpower, you&apos;re in the right place.
+            If your business runs on WhatsApp and long hours, you&apos;re in the
+            right place.
           </h2>
         </Reveal>
 

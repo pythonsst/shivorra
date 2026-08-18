@@ -7,17 +7,17 @@ const EMAIL = "hello@shivorra.it.com";
 const PHONE = "+91 70077 46087";
 const WHATSAPP =
   "https://wa.me/917007746087?text=" +
-  encodeURIComponent("Hi Shivorra — I'd like a free automation audit.");
+  encodeURIComponent("Hi Shivorra, I'd like a free chat about my business.");
 
 const GOALS = [
-  "IT consulting / advisory",
-  "Brand & UI/UX design",
-  "Website or e-commerce",
-  "Custom software / dashboard",
-  "Mobile app (iOS / Android)",
-  "AI agents & automation",
-  "Cloud, infra & IT support",
-  "Not sure yet — audit me",
+  "Advice on what to fix",
+  "Logo and design",
+  "A website or online shop",
+  "Software to run my business",
+  "An app for phones",
+  "Automating the busywork",
+  "General IT help",
+  "Not sure yet — tell me",
 ];
 
 export default function Contact() {
@@ -34,7 +34,7 @@ export default function Contact() {
     setForm((f) => ({ ...f, [k]: v }));
 
   const mailto = () => {
-    const subject = `Audit request — ${form.business || form.name || "new enquiry"}`;
+    const subject = `Free chat request — ${form.business || form.name || "new enquiry"}`;
     const body = [
       `Name: ${form.name}`,
       `Business: ${form.business}`,
@@ -42,7 +42,7 @@ export default function Contact() {
       `Phone: ${form.phone}`,
       `Interested in: ${form.goal}`,
       "",
-      "What's eating my week:",
+      "What takes up most of my week:",
       form.notes,
     ].join("\n");
     return `mailto:${EMAIL}?subject=${encodeURIComponent(
@@ -68,27 +68,27 @@ export default function Contact() {
             <div className="p-9 sm:p-12">
               <Reveal>
                 <span className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-lime-400">
-                  Free audit
+                  Free chat
                 </span>
               </Reveal>
               <Reveal delay={60}>
                 <h2 className="mt-4 font-display text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] sm:text-[2.5rem]">
-                  45 minutes. A written teardown. No pitch deck.
+                  45 minutes. A simple plan. No sales pitch.
                 </h2>
               </Reveal>
               <Reveal delay={110}>
                 <p className="mt-5 text-[1rem] leading-relaxed text-mute-300">
-                  Tell us how your week goes. We&apos;ll send back your five
-                  biggest leaks, ranked.
+                  Tell us how your week goes. We&apos;ll send back the five things
+                  costing you the most.
                 </p>
               </Reveal>
 
               <Reveal delay={160}>
                 <ul className="mt-9 space-y-4">
                   {[
-                    "Reply within one business day",
-                    "No obligation, no retainer talk",
-                    "You keep the teardown either way",
+                    "We reply within one working day",
+                    "No pressure, no hard sell",
+                    "The plan is yours to keep either way",
                   ].map((t) => (
                     <li key={t} className="flex items-center gap-3 text-[0.92rem] text-mute-300">
                       <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-lime-400/15">
@@ -197,7 +197,7 @@ export default function Contact() {
                 <textarea
                   rows={4}
                   className={`${field} resize-none`}
-                  placeholder="What's eating your week? Be blunt."
+                  placeholder="What takes up most of your week?"
                   value={form.notes}
                   onChange={(e) => set("notes")(e.target.value)}
                 />
@@ -206,7 +206,7 @@ export default function Contact() {
                   type="submit"
                   className="w-full rounded-full bg-lime-400 px-6 py-3.5 font-semibold text-ink-950 transition-all active:scale-[0.98] hover:bg-lime-500 hover:shadow-[0_14px_44px_-12px_rgba(201,242,78,0.7)]"
                 >
-                  Send and book my audit →
+                  Send it →
                 </button>
                 <p className="text-center text-[0.74rem] text-mute-400">
                   Opens your email client with the details filled in. Prefer to

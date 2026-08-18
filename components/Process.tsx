@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
 
 const STEPS = [
-  { n: "01", t: "Audit", when: "Day 0 · free", d: "We map your week and price every manual step." },
-  { n: "02", t: "Blueprint", when: "Week 1", d: "Fixed scope, fixed price, dates on paper." },
-  { n: "03", t: "Ship in slices", when: "Weeks 2–6", d: "Something useful goes live every week." },
-  { n: "04", t: "Tune", when: "Ongoing", d: "Reviewed monthly. Code and data stay yours." },
+  { n: "01", t: "A free chat", when: "45 minutes", d: "You tell us how your week goes. We listen." },
+  { n: "02", t: "A simple plan", when: "Week 1", d: "One price, one date, written down plainly." },
+  { n: "03", t: "Built bit by bit", when: "Weeks 2–6", d: "Something useful lands every week." },
+  { n: "04", t: "We look after it", when: "Ongoing", d: "It keeps improving. It all stays yours." },
 ];
 
 export default function Process() {
@@ -53,7 +53,7 @@ export default function Process() {
           </Reveal>
           <Reveal delay={60}>
             <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-              Working software in three weeks.
+              Simple, and quicker than you&apos;d think.
             </h2>
           </Reveal>
         </div>

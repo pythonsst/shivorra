@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 type Line = { agent: string; text: string; tone: "ok" | "run" | "info" };
 
 const SCRIPT: Line[] = [
-  { agent: "intake", text: "New enquiry from Instagram DM → lead created", tone: "info" },
-  { agent: "qualify", text: "Scored 82/100 · budget + timeline confirmed", tone: "run" },
-  { agent: "reply", text: "Answered in 11s with pricing + 3 slots", tone: "ok" },
-  { agent: "booking", text: "Slot locked Thu 4:30 PM · calendar synced", tone: "ok" },
-  { agent: "invoice", text: "Advance invoice sent · UPI link attached", tone: "run" },
-  { agent: "ledger", text: "Payment matched, GST entry filed", tone: "ok" },
-  { agent: "nudge", text: "Day-3 follow-up queued for 2 cold leads", tone: "info" },
-  { agent: "report", text: "Owner digest: 14 leads · 6 booked · ₹1.9L pipeline", tone: "ok" },
+  { agent: "9:04 pm", text: "New enquiry from Instagram", tone: "info" },
+  { agent: "9:04 pm", text: "Checked — looks like a good fit", tone: "run" },
+  { agent: "9:04 pm", text: "Replied with prices and 3 free slots", tone: "ok" },
+  { agent: "9:11 pm", text: "Booked for Thursday 4:30 pm", tone: "ok" },
+  { agent: "9:12 pm", text: "Sent the deposit invoice with a UPI link", tone: "run" },
+  { agent: "9:26 pm", text: "Payment received and recorded", tone: "ok" },
+  { agent: "Tomorrow", text: "Will chase 2 people who went quiet", tone: "info" },
+  { agent: "8:00 am", text: "Your summary: 14 enquiries, 6 booked", tone: "ok" },
 ];
 
 const toneMap = {
@@ -50,7 +50,7 @@ export default function HeroConsole() {
               <span className="relative h-2 w-2 rounded-full bg-lime-400" />
             </span>
             <span className="font-mono text-[0.7rem] tracking-[0.16em] text-mute-400 uppercase">
-              shivorra · ops runtime
+              while you were asleep
             </span>
           </div>
           <span className="font-mono text-[0.7rem] text-mute-400">live</span>
@@ -65,7 +65,7 @@ export default function HeroConsole() {
                 animation: `float-in 0.5s cubic-bezier(0.16,1,0.3,1) ${i * 40}ms forwards`,
               }}
             >
-              <span className="mt-px w-[68px] shrink-0 truncate rounded bg-ink-800 px-1.5 py-0.5 text-center text-[0.66rem] text-mute-300">
+              <span className="mt-px w-[74px] shrink-0 truncate rounded bg-ink-800 px-1.5 py-0.5 text-center text-[0.66rem] text-mute-300">
                 {l.agent}
               </span>
               <span className={toneMap[l.tone]}>{l.text}</span>
@@ -75,9 +75,9 @@ export default function HeroConsole() {
 
         <div className="mt-4 grid grid-cols-3 gap-2 border-t border-ink-700/70 pt-4">
           {[
-            { k: "Response time", v: "11s" },
-            { k: "Hours saved / wk", v: "23" },
-            { k: "Manual steps", v: "0" },
+            { k: "Reply time", v: "11s" },
+            { k: "Hours saved a week", v: "23" },
+            { k: "Done by hand", v: "0" },
           ].map((s) => (
             <div key={s.k}>
               <div className="font-display text-lg font-semibold text-paper">

@@ -3,8 +3,8 @@ import Reveal from "./Reveal";
 const BUILDS = [
   {
     kind: "Dental clinic",
-    title: "The no-show killer",
-    stack: ["Booking site", "Deposits", "Reminder agent"],
+    title: "No more no-shows",
+    stack: ["Online booking", "Deposits", "Reminders"],
     metric: "No-shows",
     before: "1 in 5",
     after: "under 6%",
@@ -13,9 +13,9 @@ const BUILDS = [
   },
   {
     kind: "Interior contractor",
-    title: "Quote in an hour",
-    stack: ["Rate engine", "PDF quotes", "Job pipeline"],
-    metric: "Quote turnaround",
+    title: "Quotes out the same day",
+    stack: ["Price list", "Instant quotes", "Job tracking"],
+    metric: "Time to send a quote",
     before: "5 days",
     after: "same day",
     beforeBar: 100,
@@ -23,9 +23,9 @@ const BUILDS = [
   },
   {
     kind: "D2C brand",
-    title: "Stock that tells the truth",
-    stack: ["Inventory sync", "Reorder agent", "Digest"],
-    metric: "Oversells",
+    title: "Never oversell again",
+    stack: ["Live stock", "Reorder alerts", "Daily summary"],
+    metric: "Selling stock you don't have",
     before: "weekly",
     after: "near zero",
     beforeBar: 100,
@@ -42,18 +42,18 @@ export default function Blueprints() {
           <div>
             <Reveal>
               <span className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-lime-400">
-                Blueprints
+                Examples
               </span>
             </Reveal>
             <Reveal delay={60}>
               <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-                What a build changes.
+                What actually changes.
               </h2>
             </Reveal>
           </div>
           <Reveal delay={110}>
             <p className="max-w-xs text-[0.82rem] leading-relaxed text-mute-400">
-              Blueprints we run and the targets they&apos;re engineered to hit —
+              Examples we run and the targets they&apos;re engineered to hit —
               not borrowed testimonials.
             </p>
           </Reveal>

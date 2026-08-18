@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Shivorra — end-to-end technology partner. You're paying people to do robot work.";
+  "Shivorra — too busy running the business to grow it? Websites, software and automation.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -78,10 +78,10 @@ export default function OpengraphImage() {
               flexDirection: "column",
             }}
           >
-            <span>{"You’re paying people"}</span>
+            <span>{"Too busy running"}</span>
             <span style={{ display: "flex", gap: 22 }}>
-              <span>{"to do"}</span>
-              <span style={{ color: "#c9f24e" }}>{"robot work."}</span>
+              <span>{"the business to"}</span>
+              <span style={{ color: "#c9f24e" }}>{"grow it?"}</span>
             </span>
           </div>
           <div
@@ -93,7 +93,7 @@ export default function OpengraphImage() {
               maxWidth: 900,
             }}
           >
-            {"Consulting, design, web, apps and AI automation — one partner from idea to running system."}
+            {"We build the website, software and automation that take the busywork off your plate."}
           </div>
         </div>
 
@@ -107,9 +107,9 @@ export default function OpengraphImage() {
             fontSize: 22,
           }}
         >
-          <span>Fixed scope, fixed price</span>
-          <span>Live in 21 days</span>
-          <span>You own the code</span>
+          <span>One agreed price</span>
+          <span>Running in 3 weeks</span>
+          <span>It all belongs to you</span>
         </div>
       </div>
     ),

@@ -24,23 +24,23 @@ export default function Hero() {
                 <span className="rounded-full bg-lime-400 px-2.5 py-0.5 text-[0.7rem] font-semibold text-ink-950">
                   New
                 </span>
-                See what your manual work costs you →
+                See what the busywork costs you →
               </a>
             </Reveal>
 
             <Reveal delay={80}>
               <h1 className="mt-7 font-display text-[2.6rem] leading-[1.04] font-semibold tracking-[-0.03em] sm:text-[3.5rem] lg:text-[4.1rem]">
-                You&apos;re paying people
+                Too busy running
                 <br />
-                to do{" "}
-                <span className="gradient-text">robot work.</span>
+                the business to{" "}
+                <span className="gradient-text">grow it?</span>
               </h1>
             </Reveal>
 
             <Reveal delay={160}>
               <p className="mt-6 max-w-xl text-[1.06rem] leading-relaxed text-mute-300">
-                Your whole technology department. We design it, build it, automate
-                it, and keep it running.
+                We build the website, software and automation that take the
+                busywork off your plate — so you can get back to growing.
               </p>
             </Reveal>
 
@@ -50,7 +50,7 @@ export default function Hero() {
                   href="#contact"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-lime-400 px-7 py-3.5 font-semibold text-ink-950 transition-all active:scale-[0.98] hover:bg-lime-500 hover:shadow-[0_14px_44px_-12px_rgba(201,242,78,0.75)]"
                 >
-                  Get a free automation audit
+                  Book a free chat
                   <span className="transition-transform group-hover:translate-x-0.5">
                     →
                   </span>
@@ -59,7 +59,7 @@ export default function Hero() {
                   href="#services"
                   className="inline-flex items-center justify-center rounded-full border border-ink-600 px-7 py-3.5 font-medium text-paper transition-colors hover:border-mute-400 hover:bg-ink-800/60"
                 >
-                  See what we build
+                  See what we do
                 </a>
               </div>
             </Reveal>
@@ -67,9 +67,9 @@ export default function Hero() {
             <Reveal delay={280}>
               <div className="mt-10 flex flex-wrap gap-2">
                 {[
-                  ["Fixed price", "M3 10h18M7 15h4"],
-                  ["Live in 21 days", "M12 7v5l3.2 2"],
-                  ["You own the code", "M9 12l2 2 4-4"],
+                  ["One agreed price", "M3 10h18M7 15h4"],
+                  ["Up and running in 3 weeks", "M12 7v5l3.2 2"],
+                  ["It all belongs to you", "M9 12l2 2 4-4"],
                 ].map(([label, d]) => (
                   <span
                     key={label}

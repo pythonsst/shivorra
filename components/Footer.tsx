@@ -4,12 +4,12 @@ const COLS = [
   {
     h: "Services",
     links: [
-      ["IT consulting & advisory", "#services"],
-      ["Brand & UI/UX design", "#services"],
-      ["Websites & e-commerce", "#services"],
-      ["Custom software & apps", "#services"],
-      ["Mobile apps", "#services"],
-      ["AI agents & automation", "#services"],
+      ["Advice", "#services"],
+      ["Logo & design", "#services"],
+      ["Websites & online shops", "#services"],
+      ["Software to run your business", "#services"],
+      ["Apps for phones", "#services"],
+      ["Automating the busywork", "#services"],
     ],
   },
   {
@@ -17,8 +17,8 @@ const COLS = [
     links: [
       ["How it works", "#process"],
       ["Pricing", "#pricing"],
-      ["ROI calculator", "#calculator"],
-      ["FAQ", "#faq"],
+      ["Savings calculator", "#calculator"],
+      ["Questions", "#faq"],
     ],
   },
   {
@@ -27,7 +27,7 @@ const COLS = [
       ["hello@shivorra.it.com", "mailto:hello@shivorra.it.com"],
       ["+91 70077 46087", "tel:+917007746087"],
       ["WhatsApp", "https://wa.me/917007746087"],
-      ["Book a free audit", "#contact"],
+      ["Book a free chat", "#contact"],
     ],
   },
 ];
@@ -40,9 +40,8 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-5 max-w-xs text-[0.92rem] leading-relaxed text-mute-400">
-              End-to-end technology partner: consulting, design, websites, custom
-              software, mobile apps and AI automation — so the people you pay can
-              do work only people can do.
+              We build websites, software and automation for growing businesses —
+              so you and your team can stop doing the boring bits by hand.
             </p>
             <p className="mt-6 font-mono text-[0.76rem] text-mute-400">
               shivorra.it.com
@@ -77,7 +76,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Shivorra. All rights reserved.
           </p>
           <p className="text-[0.8rem] text-mute-400">
-            Built to be replaced by something better — by us, on your schedule.
+            Plain English, real prices, and it all belongs to you.
           </p>
         </div>
       </div>

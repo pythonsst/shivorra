@@ -5,67 +5,65 @@ import Reveal from "./Reveal";
 
 const TIERS = [
   {
-    name: "Launch",
-    for: "You need to be found and to stop losing enquiries.",
+    name: "Get found",
+    for: "Nobody can find you, and enquiries slip away.",
     build: "₹35,000",
-    buildNote: "one-time build",
+    buildNote: "one-off",
     run: "₹4,000",
     popular: false,
     includes: [
-      "Brand and UI design pass before build starts",
-      "5–7 page conversion site, yours to keep",
-      "Local SEO + Google Business setup",
-      "WhatsApp enquiry capture with instant auto-reply",
-      "Booking or quote-request flow",
-      "Revenue analytics dashboard",
+      "A logo and look that's properly yours",
+      "A 5–7 page website you own",
+      "Show up on Google in your area",
+      "Every WhatsApp enquiry answered straight away",
+      "Customers book themselves in",
     ],
     runIncludes: [
-      "Hosting, backups, uptime monitoring",
-      "Content and copy edits (2 rounds/mo)",
-      "Monthly performance report",
+      "We keep it online, fast and backed up",
+      "Two rounds of text or photo changes a month",
+      "A simple monthly report",
     ],
   },
   {
-    name: "Operate",
-    for: "The business works, but it lives in spreadsheets and your head.",
+    name: "Get organised",
+    for: "It works, but it all lives in spreadsheets and your head.",
     build: "₹1,25,000",
-    buildNote: "one-time build",
+    buildNote: "one-off",
     run: "₹9,000",
     popular: true,
     includes: [
-      "Everything in Launch",
-      "Custom CRM / job pipeline built to your workflow",
-      "Full UI/UX design with a clickable prototype first",
-      "Inventory, staff or roster tracking",
-      "Owner dashboard: cash, pipeline, margins",
-      "Existing spreadsheets migrated for you",
-      "Team training and rollout support",
+      "Everything in Get found",
+      "One place to track every customer and job",
+      "Screens designed and approved before we build",
+      "Know your stock, staff and costs",
+      "One screen: money in, money out, what's coming",
+      "We move your spreadsheets over and train your team",
     ],
     runIncludes: [
-      "Everything in Launch care",
-      "Bug fixes and small feature requests",
-      "Quarterly workflow review",
+      "Everything in Get found",
+      "Fixes and small changes when you need them",
+      "A proper review every three months",
     ],
   },
   {
-    name: "Autonomous",
-    for: "You want the work done, not just tracked.",
+    name: "Get time back",
+    for: "You want the work done, not just written down.",
     build: "from ₹2,75,000",
-    buildNote: "scoped after audit",
+    buildNote: "priced after our chat",
     run: "₹18,000",
     popular: false,
     includes: [
-      "Everything in Operate",
-      "Lead-response agent (qualify, reply, book)",
-      "Invoice, reminder and reconciliation automation",
-      "Document / data extraction pipelines",
-      "Human-in-the-loop approvals + audit trail",
-      "Integrations with your existing stack",
+      "Everything in Get organised",
+      "Every enquiry answered and booked for you",
+      "Invoices, reminders and receipts sent automatically",
+      "Your bills and forms read for you",
+      "You approve anything that matters",
+      "Connects up the tools you already use",
     ],
     runIncludes: [
-      "Everything in Operate care",
-      "Weekly agent transcript review and tuning",
-      "Monthly hours-and-money-saved report",
+      "Everything in Get organised",
+      "We check what it's doing every week",
+      "A monthly note on hours and money saved",
     ],
   },
 ];
@@ -85,14 +83,14 @@ export default function Pricing() {
           </Reveal>
           <Reveal delay={60}>
             <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.9rem]">
-              Published prices. Fixed scope. No hourly meter.
+              Real prices. No surprises.
             </h2>
           </Reveal>
           <Reveal delay={110}>
             <p className="mt-5 text-[1rem] leading-relaxed text-mute-300">
-              You pay once to build it and a small monthly fee only if you want us
-              running and improving it. Cancel the monthly any time — the software
-              stays yours.
+              Pay once to get it built. The small monthly fee is optional — it just
+              means we keep looking after it. Cancel any time and it&apos;s still
+              yours.
             </p>
           </Reveal>
         </div>
@@ -101,8 +99,8 @@ export default function Pricing() {
           <div className="mx-auto mt-9 flex w-fit rounded-full border border-ink-600 bg-ink-900/70 p-1">
             {(
               [
-                ["build", "Build cost"],
-                ["run", "Monthly care"],
+                ["build", "One-off cost"],
+                ["run", "Monthly looking-after"],
               ] as const
             ).map(([k, label]) => (
               <button
@@ -154,9 +152,7 @@ export default function Pricing() {
                     )}
                   </div>
                   <p className="mt-2 text-[0.78rem] text-mute-400">
-                    {mode === "build"
-                      ? t.buildNote
-                      : "optional · cancel anytime"}
+                    {mode === "build" ? t.buildNote : "optional, cancel any time"}
                   </p>
                 </div>
 
@@ -194,7 +190,7 @@ export default function Pricing() {
                       : "border border-ink-600 text-paper hover:border-mute-400 hover:bg-ink-800/60"
                   }`}
                 >
-                  {t.name === "Autonomous" ? "Scope my build" : `Start with ${t.name}`}
+                  {t.name === "Get time back" ? "Get a price" : `Start with ${t.name}`}
                 </a>
               </article>
             </Reveal>
@@ -204,27 +200,27 @@ export default function Pricing() {
         <Reveal delay={145}>
           <div className="card mt-5 p-7 sm:p-8">
             <h3 className="font-display text-lg font-semibold tracking-tight">
-              Scoped separately
+              Bigger projects
             </h3>
             <p className="mt-2 max-w-2xl text-[0.9rem] leading-relaxed text-mute-400">
-              Bigger pieces of work get their own quote after the audit, because
-              honest numbers need a scope first.
+              These get their own price after we&apos;ve talked, because a real
+              number needs a real conversation first.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
               {[
                 {
-                  t: "Mobile app (iOS + Android)",
-                  d: "Design, build, store submission and post-launch support.",
+                  t: "An app for iPhone and Android",
+                  d: "Designed, built, put on the app stores and looked after.",
                   p: "from ₹3,50,000",
                 },
                 {
-                  t: "Brand & design system",
-                  d: "Identity, UI kit, prototype — standalone, no build required.",
+                  t: "Logo and brand",
+                  d: "A logo, colours and screens. No website needed.",
                   p: "from ₹60,000",
                 },
                 {
-                  t: "E-commerce build",
-                  d: "Catalogue, payments, inventory sync and order automation.",
+                  t: "An online shop",
+                  d: "Products, payments, stock and orders handled.",
                   p: "from ₹1,50,000",
                 },
               ].map((a) => (
@@ -251,12 +247,12 @@ export default function Pricing() {
           <div className="card mt-5 flex flex-col items-start justify-between gap-6 p-7 sm:flex-row sm:items-center sm:p-8">
             <div>
               <h3 className="font-display text-lg font-semibold tracking-tight">
-                Just need the advice?
+                Only want advice?
               </h3>
               <p className="mt-2 max-w-xl text-[0.9rem] leading-relaxed text-mute-400">
-                Consulting on its own — architecture reviews, vendor and licence
-                decisions, cloud costs, security posture, hiring your first
-                technical person. No build required.
+                Just talk to us. Which tools to use, what to stop paying for,
+                keeping your data safe, hiring your first tech person. Nothing
+                needs building.
               </p>
             </div>
             <div className="flex shrink-0 items-center gap-6">
@@ -269,7 +265,7 @@ export default function Pricing() {
                   </span>
                 </div>
                 <p className="mt-1 text-[0.76rem] text-mute-400">
-                  or ₹28,000/mo retainer
+                  or ₹28,000 a month
                 </p>
               </div>
               <a
@@ -284,12 +280,11 @@ export default function Pricing() {
 
         <Reveal delay={160}>
           <p className="mt-8 text-center text-[0.84rem] text-mute-400">
-            GST extra where applicable · payment in three milestones · not sure
-            which tier?{" "}
+            GST extra. Pay in three parts. Not sure which one?{" "}
             <a href="#contact" className="text-lime-400 underline underline-offset-4">
-              take the free audit
+              have a free chat
             </a>{" "}
-            and we&apos;ll tell you the smallest thing that fixes the most.
+            and we&apos;ll tell you the smallest thing that helps most.
           </p>
         </Reveal>
       </div>

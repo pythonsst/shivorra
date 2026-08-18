@@ -5,36 +5,36 @@ import Reveal from "./Reveal";
 
 const QA = [
   {
-    q: "I'm not technical. Is this over my head?",
-    a: "You describe how your business works in plain language; we handle the rest. If anyone needs a manual to use it, we built it wrong.",
+    q: "I'm not tech-savvy. Will I be able to use it?",
+    a: "Yes. You tell us how your business works in your own words, and we do the rest. If it needs a manual, we built it wrong.",
   },
   {
-    q: "Will this disrupt the business?",
-    a: "No. New systems run alongside the old way until you trust them, and we do the data migration — not you.",
+    q: "Will this mess up how we work now?",
+    a: "No. The new way runs alongside the old way until you trust it, and we move your information across for you.",
   },
   {
-    q: "How fast?",
-    a: "Site in 2–3 weeks. Custom software in 4–8. First AI agent in about 3. You see something working every week.",
+    q: "How long does it take?",
+    a: "A website takes 2–3 weeks. Software takes 4–8. Automation takes about 3. You see something working every week.",
   },
   {
-    q: "Can AI be trusted with my customers?",
-    a: "Only where it earns it. Agents handle mechanical, verifiable work; anything ambiguous routes to a human with full context. Every action is logged.",
+    q: "Can I trust a computer with my customers?",
+    a: "Only for the simple, checkable jobs — replying, quoting from your price list, booking a free slot. Anything unusual comes to you, and you can always see what it did.",
   },
   {
-    q: "What if I stop working with you?",
-    a: "You keep everything — code, data, domains, accounts, handover docs. No lock-in.",
+    q: "What if I want to stop working with you?",
+    a: "You keep everything, and we write down how it all works. Nothing is held over you.",
   },
   {
-    q: "Why fixed price?",
-    a: "Hourly billing pays us for being slow. We scope after the audit and commit to a number and a date.",
+    q: "Why one price instead of by the hour?",
+    a: "Charging by the hour rewards us for being slow. We agree one price and one date, and stick to them.",
   },
   {
-    q: "My business is a bit weird. Will it fit?",
-    a: "It usually won't fit off-the-shelf — which is why we build custom, around how you actually work.",
+    q: "My business is a bit unusual. Will it fit?",
+    a: "Ready-made software rarely fits, which is why we build around the way you already work — including the messy bits.",
   },
   {
-    q: "What's in the free audit?",
-    a: "45 minutes mapping your week, then a written teardown of your five biggest leaks. Yours whether you hire us or not.",
+    q: "What happens on the free chat?",
+    a: "45 minutes going through your week, then a short written plan of the five things costing you most. Yours to keep either way.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function FAQ() {
             </Reveal>
             <Reveal delay={60}>
               <h2 className="mt-4 font-display text-[2.1rem] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[2.6rem]">
-Before you trust us.
+Things people ask us.
               </h2>
             </Reveal>
             <Reveal delay={110}>

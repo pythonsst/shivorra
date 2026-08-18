@@ -123,7 +123,7 @@ export default function Calculator() {
         <div className="max-w-2xl">
           <Reveal>
             <span className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-lime-400">
-              The maths
+              The numbers
             </span>
           </Reveal>
           <Reveal delay={60}>
@@ -133,8 +133,8 @@ export default function Calculator() {
           </Reveal>
           <Reveal delay={110}>
             <p className="mt-5 text-[1.02rem] leading-relaxed text-mute-300">
-              Move the sliders to match your business. Every number below is
-              computed live from assumptions we state openly — no black box.
+              Drag the sliders to match your business. We show you exactly how we
+              worked it out.
             </p>
           </Reveal>
         </div>
@@ -143,7 +143,7 @@ export default function Calculator() {
           <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
             <div className="card space-y-8 p-8 sm:p-10">
               <Slider
-                label="People doing repetitive admin"
+                label="People doing the same jobs over and over"
                 value={people}
                 min={1}
                 max={25}
@@ -151,26 +151,26 @@ export default function Calculator() {
                 format={(v) => `${v}`}
               />
               <Slider
-                label="Hours each, per week"
+                label="Hours each of them spends, per week"
                 value={hours}
                 min={2}
                 max={40}
                 onChange={setHours}
                 format={(v) => `${v} hrs`}
-                hint="Data entry, follow-ups, invoicing, scheduling, reporting."
+                hint="Typing things in, chasing people, invoices, bookings, reports."
               />
               <Slider
-                label="Loaded cost per hour"
+                label="What an hour of their time costs you"
                 value={rate}
                 min={100}
                 max={2500}
                 step={50}
                 onChange={setRate}
                 format={inr}
-                hint="Salary + overheads ÷ hours worked. Use your own time too."
+                hint="Their pay plus costs, divided by hours worked. Count your own time too."
               />
               <Slider
-                label="Enquiries lost to slow replies / month"
+                label="Enquiries a month you reply to too late"
                 value={slowLeads}
                 min={0}
                 max={150}
@@ -178,7 +178,7 @@ export default function Calculator() {
                 format={(v) => `${v}`}
               />
               <Slider
-                label="Average value of a customer"
+                label="What a customer is usually worth"
                 value={dealValue}
                 min={1000}
                 max={500000}
@@ -191,15 +191,15 @@ export default function Calculator() {
             <div className="flex flex-col gap-6">
               <div className="card glow-lime relative overflow-hidden p-8 sm:p-10">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-mute-400">
-                  Recoverable in year one
+                  You could get back this year
                 </p>
                 <p className="mt-3 font-display text-[3rem] font-semibold leading-none tracking-[-0.03em] text-lime-400 tabular-nums sm:text-[3.6rem]">
                   {inr(totalShown)}
                 </p>
                 <p className="mt-4 text-[0.92rem] leading-relaxed text-mute-300">
-                  {inr(r.adminSaved)} in admin time you stop paying for, plus{" "}
-                  {inr(r.leadUpside)} from enquiries you currently answer too
-                  late.
+                  {inr(r.adminSaved)} of time you stop paying for, plus{" "}
+                  {inr(r.leadUpside)} from customers you&apos;re currently losing to
+                  slow replies.
                 </p>
               </div>
 
@@ -211,10 +211,10 @@ export default function Calculator() {
                   },
                   {
                     v: `${Math.round(r.daysBack)}`,
-                    k: "Working days a year, freed",
+                    k: "Whole working days a year",
                   },
-                  { v: inr(r.adminCostYear), k: "Current annual admin cost" },
-                  { v: `${Math.round(AUTOMATABLE * 100)}%`, k: "Typically automated" },
+                  { v: inr(r.adminCostYear), k: "What it costs you today" },
+                  { v: `${Math.round(AUTOMATABLE * 100)}%`, k: "We usually take care of" },
                 ].map((s) => (
                   <div key={s.k} className="card p-5">
                     <div className="font-display text-xl font-semibold tabular-nums">
@@ -229,18 +229,17 @@ export default function Calculator() {
 
               <div className="card p-6">
                 <p className="text-[0.78rem] leading-relaxed text-mute-400">
-                  <span className="text-mute-300">Assumptions:</span> we remove{" "}
-                  {Math.round(AUTOMATABLE * 100)}% of repetitive admin hours and
-                  recover {Math.round(RECOVERY * 100)}% of slow-response
-                  enquiries — the range we see in practice. This is an estimate to
-                  size the opportunity, not a guarantee. The free audit replaces
-                  these with your actual numbers.
+                  <span className="text-mute-300">How we worked this out:</span> we take care of{" "}
+                  {Math.round(AUTOMATABLE * 100)}% of the repeated work, and win back{" "}
+                  {Math.round(RECOVERY * 100)}% of the enquiries you answer too late —
+                  what we usually see. It&apos;s an estimate, not a promise. On the
+                  free chat we swap these for your real numbers.
                 </p>
                 <a
                   href="#contact"
                   className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-paper px-6 py-3 font-semibold text-ink-950 transition-transform hover:-translate-y-0.5 active:scale-[0.98]"
                 >
-                  Pressure-test this on a call →
+                  Check this with us →
                 </a>
               </div>
             </div>
